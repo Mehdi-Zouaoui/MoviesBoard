@@ -1,0 +1,98 @@
+{
+    "type": "object",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "properties": {
+        "title": {
+            "title": "Titre",
+            "type": "string",
+            "description": "Titre complet du film"
+        },
+        "release_date": {
+            "title": "Date de sortie",
+            "description": "Date de sortie du film au cinéma",
+            "type": "string",
+            "format": "date",
+            "example": "2019-06-28"
+        },
+        "categories": {
+            "title": "Catégories",
+            "description": "Catégories du film",
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "description": {
+            "title": "Résumé",
+            "description": "Résumé du film",
+            "type": "string"
+        },
+        "poster": {
+            "title": "Affiche",
+            "description": "Affiche officielle du film",
+            "type": "string",
+            "pattern": "^https?:\/\/"
+        },
+        "backdrop": {
+            "title": "Fond",
+            "description": "Image de fond",
+            "type": "string",
+            "pattern": "^https?:\/\/"
+        },
+        "actors": {
+            "title": "Acteurs",
+            "description": "Liste des acteurs du film",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "photo": {
+                        "type": "string",
+                        "pattern": "^https?:\/\/"
+                    },
+                    "character": {
+                        "type": "string"
+                    }
+                },
+                "additionalProperties": false,
+                "required": [
+                    "name",
+                    "photo",
+                    "character"
+                ]
+            }
+        },
+        "similar_movies": {
+            "title": "Films similaires",
+            "description": "Liste des films similaires",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "title": {
+                        "type": "string"
+                    },
+                    "poster": {
+                        "type": "string",
+                        "pattern": "^https?:\/\/"
+                    },
+                    "release_date": {
+                        "type": "string",
+                        "format": "date",
+                        "example": "2019-06-28"
+                    }
+                },
+                "additionalProperties": false,
+                "required": [
+                    "title",
+                    "poster",
+                    "release_date"
+                ]
+            }
+        }
+    },
+    "additionalProperties": false
+}

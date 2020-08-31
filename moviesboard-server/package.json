@@ -1,0 +1,16 @@
+{
+  "name": "moviesboard-server",
+  "version": "1.0.0",
+  "description": "Serveur REST pour la gestion de films du Projet de Fin d'Etudes \"Movies Board\". Ne pas distribuer svp.",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "JM Cléry <jmclery@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "ajv": "^6.12.3",
+    "json-server": "^0.16.1"
+  }
+}
