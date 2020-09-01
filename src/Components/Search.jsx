@@ -11,9 +11,12 @@ function Search() {
     const onSubmit = (data) => {
         setFilms([]);
         axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${capitalizeFirstLetter(data.title)}`).then(item => {
-            console.log(item);
+            console.log(item.data);
             setFilms(oldFilms => [...oldFilms , item]);
+
+
         });
+
     };
 
     const  capitalizeFirstLetter = (string)  => {
@@ -39,9 +42,9 @@ function Search() {
                     <input type="date" id='date' name="date" className="form-control" ref={register}/>
                 </div>
                 <input className="btn mt-3 btn-info col-2 " type="submit" value="Envoyer"/>
-                {films.length ? <List array={films}/> : <div>Loading</div>}
-            </form>
 
+            </form>
+            {films.length ? <List array={films}/> : <div>Loading</div>}
 
 
         </div>
