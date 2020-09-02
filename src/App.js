@@ -4,14 +4,19 @@ import './App.css';
 import Search from "./Components/Search";
 import {BrowserRouter as Router, Switch, Route, Redirect} from 'react-router-dom'
 import SearchResult from "./Components/SearchResult";
+import Movies from "./Components/Movies";
+import Navigation from "./Components/Navigation";
 
 function App() {
   return (
     <div className="App">
     <Router>
+        <Navigation/>
         <Switch>
-            <Route path="/search" component={Search}/>
-            <Route path="/result/:id?" component={SearchResult}/>
+
+            <Route exact path="/" component={Movies}/>
+            <Route exact path="/search" component={Search}/>
+            <Route exact path="/result/:id?" component={SearchResult}/>
         </Switch>
     </Router>
     </div>

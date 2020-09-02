@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import {useForm} from "react-hook-form";
 import axios from 'axios';
 import List from "./List";
+import '../styles.css';
 
 function Search() {
     const apiKey = "7de0ea6cc8752d95f4cb988e9e3e333b";
@@ -13,10 +14,7 @@ function Search() {
         axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${capitalizeFirstLetter(data.title)}`).then(item => {
             console.log(item.data);
             setFilms(oldFilms => [...oldFilms , item]);
-
-
         });
-
     };
 
     const  capitalizeFirstLetter = (string)  => {
@@ -31,20 +29,34 @@ function Search() {
     return (
         <div>
             <form method="PUT" onSubmit={handleSubmit(onSubmit)}
-                  className="mt-5 mx-auto py-3 card col-10  border border-info ">
-                <div className="row col-6">
-                    <label htmlFor="name" className="h3">Titre</label>
-                    <input type="text" id='title' className="form-control" name="title" ref={register}
-                           placeholder="Entrer un titre..."/>
+                  className="mt-5 mx-auto py-3  col-10  ">
+                <div className="form-row mb-4">
+                    <div className="name"> Titre</div>
+                    <div className="value">
+                        <div className="row row-space">
+                            <div className="col-12">
+                                <input type="text" className="inputStyle col-10" id="inputEmail4" name="title"
+                                       ref={register}/>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div className="row col-6">
-                    <label htmlFor="name" className="h4">Date</label>
-                    <input type="date" id='date' name="date" className="form-control" ref={register}/>
+
+                <div className="form-row mb-4">
+                    <div className="name"> Date</div>
+                    <div className="value">
+                        <div className="row row-space">
+                            <div className="col-12">
+                                <input type="date" id='date' name="date" className=" inputStyle  col-10" ref={register}/>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <input className="btn mt-3 btn-info col-2 " type="submit" value="Envoyer"/>
+
+                <input className="btn mt-3 btn-dark col-4 " type="submit" value="Envoyer"/>
 
             </form>
-            {films.length ? <List array={films}/> : <div>Loading</div>}
+            {films.length ? <List array={films}/> : ""}
 
 
         </div>

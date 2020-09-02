@@ -13,13 +13,15 @@ function List(props) {
     const getData = (item) => {
         const actorsRequest = axios.get(`https://api.themoviedb.org/3/movie/${item.id}/credits?api_key=${apiKey}`);
         const similarMovies = axios.get(`https://api.themoviedb.org/3/movie/${item.id}/similar?api_key=${apiKey}`);
-
-        axios.all([actorsRequest, similarMovies]).then(axios.spread((...res) => {
+        const requestDetails = axios.get(`https://api.themoviedb.org/3/movie/${item.id}?api_key=${apiKey}`);
+        axios.all([actorsRequest, similarMovies , requestDetails]).then(axios.spread((...res) => {
             const actorRequest = res[0];
             const similarRequest = res[1];
+            const genreRequest = res[2];
             const actorsArray = actorRequest.data.cast.slice(0, 3);
             const similarArray = similarRequest.data.results.slice(0, 3);
-            setCurrentSearch({...item, actors: actorsArray, similar: similarArray});
+            const genresArray =  genreRequest.data.genres;
+            setCurrentSearch({...item, actors: actorsArray, similar: similarArray , genres : genresArray});
         })).catch(err => console.error(err));
 
     };
@@ -39,8 +41,8 @@ function List(props) {
 
             {!props.array.length ? <div>Loading</div> :
                 <Dropdown>
-                    <Dropdown.Toggle variant="success" id="dropdown-basic">
-                        Dropdown Button
+                    <Dropdown.Toggle style={{marginBottom : '10px'}} variant="success" id="dropdown-basic">
+                        Research
                     </Dropdown.Toggle>
                     <Dropdown.Menu>
                         {card.map((item, index) => {
