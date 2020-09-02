@@ -8,17 +8,20 @@ function List(props) {
     const apiKey = "7de0ea6cc8752d95f4cb988e9e3e333b";
     const [redirectTo, setRedirectTo] = useState('');
     const [card, setCard] = useState([]);
-    const [currentSearch , setCurrentSearch] = useState({});
-    console.log(currentSearch);
+    const [currentSearch, setCurrentSearch] = useState({});
 
+    const getData = (item) => {
+        const actorsRequest = axios.get(`https://api.themoviedb.org/3/movie/${item.id}/credits?api_key=${apiKey}`);
+        const similarMovies = axios.get(`https://api.themoviedb.org/3/movie/${item.id}/similar?api_key=${apiKey}`);
 
-    const test = (item) => {
-        setCurrentSearch(item);
-        axios.get(`https://api.themoviedb.org/3/movie/${item.id}/credits?api_key=${apiKey}`).then(item => {
-            const newArray = item.data.cast.slice(0,3);
-            setCurrentSearch(prevState => ({...prevState , actors : newArray}));
-            console.log(currentSearch)
-        });
+        axios.all([actorsRequest, similarMovies]).then(axios.spread((...res) => {
+            const actorRequest = res[0];
+            const similarRequest = res[1];
+            const actorsArray = actorRequest.data.cast.slice(0, 3);
+            const similarArray = similarRequest.data.results.slice(0, 3);
+            setCurrentSearch({...item, actors: actorsArray, similar: similarArray});
+        })).catch(err => console.error(err));
+
     };
 
     useEffect(() => {
@@ -42,17 +45,17 @@ function List(props) {
                     <Dropdown.Menu>
                         {card.map((item, index) => {
                             return (
-                                <Dropdown.Item onClick={() => test(item)} key={index}>{item.title}</Dropdown.Item>
+                                <Dropdown.Item onClick={() => getData(item)} key={index}>{item.title}</Dropdown.Item>
                             )
                         })}
                     </Dropdown.Menu>
                 </Dropdown>
 
             }
-            {Object.keys(currentSearch).length > 0 ? <SearchResult data={currentSearch} /> : ''}
-            </div>
-                );
-                }
+            {Object.keys(currentSearch).length > 0 ? <SearchResult data={currentSearch}/> : ''}
+        </div>
+    );
+}
 
 
-                export default List
+export default List
