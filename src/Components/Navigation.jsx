@@ -10,7 +10,7 @@ function Navigation() {
     return (
         <div>
             <nav className="navbar navbar-expand-lg navbar-light bg-dark position-relative" style={{zIndex : "1"}}>
-                <Link className='navbar-brand' to={'/'}>Movies</Link>
+                <Link className='navbar-brand' to={'/movies'}>Movies</Link>
                 <ul className="navbar-nav">
                     <li className="nav-item active">
                         <Link className="nav-item active" to={'/search'}>Search</Link>

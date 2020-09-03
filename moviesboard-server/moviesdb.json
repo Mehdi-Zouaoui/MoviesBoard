@@ -88,6 +88,33 @@
         }
       ],
       "id": 2
+    },
+    {
+      "title": "Pokémon Detective Pikachu",
+      "release_date": "2019-05-03",
+      "categories": [
+        "Action",
+        "Adventure",
+        "Fantasy"
+      ],
+      "description": "In a world where people collect pocket-size monsters (Pokémon) to do battle, a boy comes across an intelligent monster who seeks to be a detective.",
+      "poster": "http://image.tmdb.org/t/p/original/wgQ7APnFpf1TuviKHXeEe3KnsTV.jpg",
+      "backdrop": "http://image.tmdb.org/t/p/original/nDP33LmQwNsnPv29GQazz59HjJI.jpg",
+      "actors": [
+        {
+          "name": "test",
+          "photo": "http://image.tmdb.org/t/p/w185/uTjU9MVPhyLNs4cjacee3XoCmeE.jpg",
+          "character": "test"
+        }
+      ],
+      "similar_movies": [
+        {
+          "title": "test",
+          "poster": "http://image.tmdb.org/t/p/w185/uTjU9MVPhyLNs4cjacee3XoCmeE.jpg",
+          "release_date": "2019-05-03"
+        }
+      ],
+      "id": 3
     }
   ]
 }
