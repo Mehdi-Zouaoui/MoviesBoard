@@ -22,6 +22,11 @@
                 "type": "string"
             }
         },
+        "score": {
+            "title" : "Notes",
+            "type" : "string",
+            "description" : "Note du film"
+        },
         "description": {
             "title": "Résumé",
             "description": "Résumé du film",

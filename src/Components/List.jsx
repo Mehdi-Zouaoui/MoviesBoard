@@ -18,8 +18,8 @@ function List(props) {
             const actorRequest = res[0];
             const similarRequest = res[1];
             const genreRequest = res[2];
-            const actorsArray = actorRequest.data.cast.slice(0, 3);
-            const similarArray = similarRequest.data.results.slice(0, 3);
+            const actorsArray = actorRequest.data.cast.slice(0, 6);
+            const similarArray = similarRequest.data.results.slice(0, 4);
             const genresArray =  genreRequest.data.genres;
             setCurrentSearch({...item, actors: actorsArray, similar: similarArray , genres : genresArray});
         })).catch(err => console.error(err));

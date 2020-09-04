@@ -1,102 +1,171 @@
-.homepage{
-  height: 100vh;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  position: absolute;
-  z-index: 0;
-  top: 0;
-  left: 0;
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+
+.detail_backdrop {
+    height: 250px;
+    width: 80%;
+    background-size: cover;
+    background-position: top left;
+    position: relative;
+}
+
+.title {
+    font-family: 'Anton', sans-serif;
+}
+
+.score {
+    height: 10%;
+    width: 50%;
+    border-radius: 50%;
+    background: #fec43d;
+}
+
+.details {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin: -75px auto 0 auto;
+    height: 100%;
+}
+
+.actorPictures {
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.similarPictures {
+    height: 150px;
+    background-size: cover;
+}
+
+.detail_poster {
+    height: 323px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.homepage {
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    right: 0;
 
 }
-.homepage .filter{
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  background-color: black;
-  opacity: 0.85;
-  top: 0;
-  left: 0;
+
+.homepage .filter {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-color: black;
+    opacity: 0.85;
+    top: 0;
+    left: 0;
 }
-.homepage .display{
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  z-index: 1;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  top: 0;
-  left: 0;
-  font-size: 25px;
+
+.homepage .display {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    top: 0;
+    left: 0;
+    font-size: 25px;
 }
-.controlButton{
-  width: 30%;
+
+.controlButton {
+    width: 30%;
 }
-.homepage .details{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-  width: 50%;
-  color: white;
+
+.homepage .details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 50%;
+    color: white;
 }
+
 .inputStyle {
-  background: #e5e5e5;
-  line-height: 50px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-  padding: 0 22px;
-  font-size: 16px;
-  color: #555;
-  border-color: transparent;
+    background: #e5e5e5;
+    line-height: 50px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    padding: 0 22px;
+    font-size: 16px;
+    color: #555;
+    border-color: transparent;
 }
-.textAreaStyle{
-  background: #e5e5e5;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-  padding: 0 22px;
-  font-size: 16px;
-  color: #555;
-  border-color: transparent;
+
+.textAreaStyle {
+    background: #e5e5e5;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    padding: 0 22px;
+    font-size: 16px;
+    color: #555;
+    border-color: transparent;
 }
-.actorInput{
- background: #e5e5e5;
-line-height: 30px;
--webkit-border-radius: 5px;
--moz-border-radius: 5px;
-border-radius: 5px;
-  border-color: transparent;
-padding: 0 22px;
-font-size: 16px;
-color: #555;
+
+.actorInput {
+    background: #e5e5e5;
+    line-height: 30px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    border-color: transparent;
+    padding: 0 22px;
+    font-size: 16px;
+    color: #555;
 }
 
 .form-row .name {
-  text-align: center;
-  width: 125px;
-  color: #555;
-  font-size: 15px;
-  font-weight: 700;
-  line-height: 50px;
+    text-align: center;
+    width: 125px;
+    color: #555;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 50px;
 }
+
 .form-row .value {
-  width: -webkit-calc(100% - 125px);
-  width: -moz-calc(100% - 125px);
-  width: calc(100% - 125px);
+    width: -webkit-calc(100% - 125px);
+    width: -moz-calc(100% - 125px);
+    width: calc(100% - 125px);
 }
+
 .label--desc {
-  text-transform: capitalize;
-  display: block;
-  color: #999;
-  font-size: 14px;
-  margin: 0 0 5px 0;
+    text-transform: capitalize;
+    display: block;
+    color: #999;
+    font-size: 14px;
+    margin: 0 0 5px 0;
 }
-.input-group-desc{
-  position: relative;
+
+.input-group-desc {
+    position: relative;
 }
-.main{
-  display: flex;
+
+.main {
+    display: flex;
+}
+
+.movie {
+
+}
+
+.description {
+    font-size: 15px;
+    justify-content: center;
 }

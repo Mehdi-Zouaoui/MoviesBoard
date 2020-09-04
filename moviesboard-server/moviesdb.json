@@ -1,120 +1,167 @@
 {
   "movies": [
     {
-      "title": "Spider-Man: Far from Home",
-      "release_date": "2019-06-28",
+      "title": "Django Unchained",
+      "release_date": "2012-12-25",
       "categories": [
-        "Action",
-        "Aventure",
-        "Science-Fiction"
+        "Drama",
+        "Western"
       ],
-      "description": "Peter et ses amis passent leurs vacances d’été en Europe. Mais ils n’auront pas vraiment l’occasion de se reposer puisque Peter accepte d’aider Nick Fury pour débusquer les mystérieuses créatures qui sont la cause des catastrophes naturelles qui frappent le continent.",
-      "poster": "https://image.tmdb.org/t/p/original/zrNKUa5SBUwue39coJArNdDgQJM.jpg",
-      "backdrop": "https://image.tmdb.org/t/p/original/5myQbDzw3l8K9yofUXRJ4UTVgam.jpg",
+      "score": "8.1",
+      "description": "With the help of a German bounty hunter, a freed slave sets out to rescue his wife from a brutal Mississippi plantation owner.",
+      "poster": "http://image.tmdb.org/t/p/original/7oWY8VDWW7thTzWh3OKYRkWUlD5.jpg",
+      "backdrop": "http://image.tmdb.org/t/p/original/zTqrLIFED5HYM8tmb7gCahUt4QF.jpg",
       "actors": [
         {
-          "name": "Tom Holland",
-          "photo": "https://image.tmdb.org/t/p/w342/ip7aXVH8s6wXv8cY6KI14OZgCI8.jpg",
-          "character": "Peter Parker / Spider-Man"
-        },
-        {
-          "name": "Samuel L. Jackson",
-          "photo": "https://image.tmdb.org/t/p/w342/mXN4Gw9tZJVKrLJHde2IcUHmV3P.jpg",
-          "character": "Nick Fury"
-        },
-        {
-          "name": "Jake Gyllenhaal",
-          "photo": "https://image.tmdb.org/t/p/w342/rJdYHYNhlcOBwbPvDZVvt1xw7bi.jpg",
-          "character": "Quentin Beck / Mysterio"
-        },
-        {
-          "name": "Marisa Tomei",
-          "photo": "https://image.tmdb.org/t/p/w342/nrRXQkCWVXQVIHhYMhEjOWehJCH.jpg",
-          "character": "May Parker"
-        },
-        {
-          "name": "Jon Favreau",
-          "photo": "https://image.tmdb.org/t/p/w342/8MtRRnEHaBSw8Ztdl8saXiw1egP.jpg",
-          "character": "Harold \"Happy\" Hogan"
-        },
-        {
-          "name": "Zendaya",
-          "photo": "https://image.tmdb.org/t/p/w342/r3A7ev7QkjOGocVn3kQrJ0eOouk.jpg",
-          "character": "Michelle \"MJ\" Jones"
+          "name": "test",
+          "photo": "http://image.tmdb.org/t/p/w185/uTjU9MVPhyLNs4cjacee3XoCmeE.jpg",
+          "character": "test"
         }
       ],
       "similar_movies": [
         {
-          "title": "X-Men: Apocalypse",
-          "poster": "https://image.tmdb.org/t/p/w342/2mtQwJKVKQrZgTz49Dizb25eOQQ.jpg",
-          "release_date": "2016-05-18"
-        },
-        {
-          "title": "Captain Marvel",
-          "poster": "https://image.tmdb.org/t/p/w342/AtsgWhDnHTq68L0lLsUrCnM7TjG.jpg",
-          "release_date": "2019-03-06"
-        },
-        {
-          "title": "Superman Returns",
-          "poster": "https://image.tmdb.org/t/p/w342/6ZYOpyhFZrAQIe1BuhqVgzfAdGZ.jpg",
-          "release_date": "2006-06-28"
+          "title": "test",
+          "poster": "http://image.tmdb.org/t/p/w185/uTjU9MVPhyLNs4cjacee3XoCmeE.jpg",
+          "release_date": "2012-12-25"
         }
       ],
-      "id": 1
+      "id": 4
     },
     {
-      "title": "Iron Man 3",
-      "release_date": "2013-04-18",
+      "title": "Princess Mononoke",
+      "release_date": "1997-07-12",
       "categories": [
-        "Action",
         "Adventure",
+        "Fantasy",
+        "Animation"
+      ],
+      "score": "8.4",
+      "description": "Ashitaka, a prince of the disappearing Emishi people, is cursed by a demonized boar god and must journey to the west to find a cure. Along the way, he encounters San, a young human woman fighting to protect the forest, and Lady Eboshi, who is trying to destroy it. Ashitaka must find a way to bring balance to this conflict.",
+      "poster": "http://image.tmdb.org/t/p/original/pdtzEreKvKAlqa2YEBaGwiA45V8.jpg",
+      "backdrop": "http://image.tmdb.org/t/p/original/cSYaJn9fXSfDDjhuQZQhrs6HI0j.jpg",
+      "actors": [
+        {
+          "name": "Yōji Matsuda",
+          "photo": "http://image.tmdb.org/t/p/original/42WeHwCymsgJh3mLAyknCdRcef8.jpg",
+          "character": "Ashitaka (voice)"
+        },
+        {
+          "name": "Yuriko Ishida",
+          "photo": "http://image.tmdb.org/t/p/original/cADoBCi603Chz2IaxcwWT2mNwCf.jpg",
+          "character": "San (voice)"
+        },
+        {
+          "name": "Yūko Tanaka",
+          "photo": "http://image.tmdb.org/t/p/original/xXek6ZKG9iH5ughIneW3yv9slyY.jpg",
+          "character": "Eboshi-gozen (voice)"
+        },
+        {
+          "name": "Kaoru Kobayashi",
+          "photo": "http://image.tmdb.org/t/p/original/3gNFgTysl94iMcEH8dfOut1yE8u.jpg",
+          "character": "Jiko-bô (voice)"
+        },
+        {
+          "name": "Masahiko Nishimura",
+          "photo": "http://image.tmdb.org/t/p/original/2fXvxAI4KySYgp9KZMzkK4q2TkY.jpg",
+          "character": "Kouroku (voice)"
+        },
+        {
+          "name": "Tsunehiko Kamijô",
+          "photo": "http://image.tmdb.org/t/p/original/v2poQi0qYEWdTaMf2pVTWmcdwZp.jpg",
+          "character": "Gonza (voice)"
+        }
+      ],
+      "similar_movies": [
+        {
+          "title": "Dragon Quest: Your Story",
+          "poster": "http://image.tmdb.org/t/p/original/5R70ehKGh5V0ZYOdikxwSfoLGMt.jpg",
+          "release_date": "2019-08-02"
+        },
+        {
+          "title": "My Little Pony: Equestria Girls",
+          "poster": "http://image.tmdb.org/t/p/original/pwaeN230DNheHxIekQXnWKJGsAP.jpg",
+          "release_date": "2013-06-16"
+        },
+        {
+          "title": "Wolf Children",
+          "poster": "http://image.tmdb.org/t/p/original/nqqovhsvsWbsb7LcGaIGDRZrwgB.jpg",
+          "release_date": "2012-07-21"
+        },
+        {
+          "title": "Kingsglaive: Final Fantasy XV",
+          "poster": "http://image.tmdb.org/t/p/original/xGMgspge6uYoypRiasAmlluDlXH.jpg",
+          "release_date": "2016-07-09"
+        }
+      ],
+      "id": 7
+    },
+    {
+      "title": "Interstellar",
+      "release_date": "2014-11-05",
+      "categories": [
+        "Adventure",
+        "Drama",
         "Science Fiction"
       ],
-      "description": "When Tony Stark's world is torn apart by a formidable terrorist called the Mandarin, he starts an odyssey of rebuilding and retribution.",
-      "poster": "http://image.tmdb.org/t/p/original/qhPtAc1TKbMPqNvcdXSOn9Bn7hZ.jpg",
-      "backdrop": "http://image.tmdb.org/t/p/original/2ymO6kST1wwtuSlHifAoG2n2fe5.jpg",
+      "score": "8.3",
+      "description": "The adventures of a group of explorers who make use of a newly discovered wormhole to surpass the limitations on human space travel and conquer the vast distances involved in an interstellar voyage.",
+      "poster": "http://image.tmdb.org/t/p/original/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg",
+      "backdrop": "http://image.tmdb.org/t/p/original/xJHokMbljvjADYdit5fK5VQsXEG.jpg",
       "actors": [
         {
-          "name": "test",
-          "photo": "http://image.tmdb.org/t/p/w185/uTjU9MVPhyLNs4cjacee3XoCmeE.jpg",
-          "character": "test"
+          "name": "Matthew McConaughey",
+          "photo": "http://image.tmdb.org/t/p/original/wJiGedOCZhwMx9DezY8uwbNxmAY.jpg",
+          "character": "Joseph \"Coop\" Cooper"
+        },
+        {
+          "name": "Jessica Chastain",
+          "photo": "http://image.tmdb.org/t/p/original/lodMzLKSdrPcBry6TdoDsMN3Vge.jpg",
+          "character": "Murphy \"Murph\" Cooper"
+        },
+        {
+          "name": "Anne Hathaway",
+          "photo": "http://image.tmdb.org/t/p/original/tLelKoPNiyJCSEtQTz1FGv4TLGc.jpg",
+          "character": "Dr. Amelia Brand"
+        },
+        {
+          "name": "Michael Caine",
+          "photo": "http://image.tmdb.org/t/p/original/fx6vcV7iTo2SNywQRPfh6v62wRR.jpg",
+          "character": "Professor John Brand"
+        },
+        {
+          "name": "Casey Affleck",
+          "photo": "http://image.tmdb.org/t/p/original/hcggAadv5SwdhoAb4yYMoAFYdWK.jpg",
+          "character": "Tom Cooper"
+        },
+        {
+          "name": "Mackenzie Foy",
+          "photo": "http://image.tmdb.org/t/p/original/u6Dt9C6VwWt4kRTGEcr3p2shxgt.jpg",
+          "character": "Young Murph Cooper"
         }
       ],
       "similar_movies": [
         {
-          "title": "test",
-          "poster": "http://image.tmdb.org/t/p/w185/uTjU9MVPhyLNs4cjacee3XoCmeE.jpg",
-          "release_date": "2013-04-18"
-        }
-      ],
-      "id": 2
-    },
-    {
-      "title": "Pokémon Detective Pikachu",
-      "release_date": "2019-05-03",
-      "categories": [
-        "Action",
-        "Adventure",
-        "Fantasy"
-      ],
-      "description": "In a world where people collect pocket-size monsters (Pokémon) to do battle, a boy comes across an intelligent monster who seeks to be a detective.",
-      "poster": "http://image.tmdb.org/t/p/original/wgQ7APnFpf1TuviKHXeEe3KnsTV.jpg",
-      "backdrop": "http://image.tmdb.org/t/p/original/nDP33LmQwNsnPv29GQazz59HjJI.jpg",
-      "actors": [
+          "title": "Oblivion",
+          "poster": "http://image.tmdb.org/t/p/original/2ncs7hqBsEjFMqt6Y7ShBCO9tWs.jpg",
+          "release_date": "2013-04-10"
+        },
         {
-          "name": "test",
-          "photo": "http://image.tmdb.org/t/p/w185/uTjU9MVPhyLNs4cjacee3XoCmeE.jpg",
-          "character": "test"
-        }
-      ],
-      "similar_movies": [
+          "title": "Alien: Covenant",
+          "poster": "http://image.tmdb.org/t/p/original/zecMELPbU5YMQpC81Z8ImaaXuf9.jpg",
+          "release_date": "2017-05-09"
+        },
         {
-          "title": "test",
-          "poster": "http://image.tmdb.org/t/p/w185/uTjU9MVPhyLNs4cjacee3XoCmeE.jpg",
-          "release_date": "2019-05-03"
+          "title": "The Matrix Revolutions",
+          "poster": "http://image.tmdb.org/t/p/original/fgm8OZ7o4G1G1I9EeGcb85Noe6L.jpg",
+          "release_date": "2003-11-03"
+        },
+        {
+          "title": "Terminator Genisys",
+          "poster": "http://image.tmdb.org/t/p/original/oZRVDpNtmHk8M1VYy1aeOWUXgbC.jpg",
+          "release_date": "2015-06-23"
         }
       ],
-      "id": 3
+      "id": 8
     }
   ]
 }

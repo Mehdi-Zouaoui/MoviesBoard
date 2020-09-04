@@ -2,22 +2,21 @@ import React, {useEffect, useState} from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Search from "./Components/Search";
-import {BrowserRouter as Router, Switch, Route, Redirect} from 'react-router-dom'
+import {BrowserRouter as Router, Switch, Route, Redirect, useParams} from 'react-router-dom'
 import SearchResult from "./Components/SearchResult";
 import Movies from "./Components/Movies";
 import Navigation from "./Components/Navigation";
 import Details from "./Components/Details";
 import axios from "axios";
 
+
 function App() {
-
-
-    // const [index, setIndex] = useState(0);
+    // const {index} = useParams();
     const [movies, setMovies] = useState([]);
     const [currentMovie, setCurrentMovie] = useState({});
 
     useEffect(() => {
-
+        // console.log(index);
         axios.get(`http://localhost:3000/movies`).then(item => {
             console.log(item.data);
             setMovies(item.data);
@@ -30,11 +29,10 @@ function App() {
     <Router>
         <Navigation/>
         <Switch>
-
             <Route exact path="/movies" component={() => <Movies movies={movies} currentMovie={currentMovie}/>}/>
             <Route exact path="/search" component={Search}/>
-            <Route exact path="/movies/:id?" component={() => <Details movie={currentMovie}/>}/>
-
+            <Route exact path="/movies/:id" component={() => <Details movies={movies}/>}/>
+            <Route exact path="/movie/edit/:id" component={() => <SearchResult movies={movies}/>}/>
         </Switch>
     </Router>
     </div>
