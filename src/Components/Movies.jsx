@@ -3,7 +3,7 @@ import {useForm} from "react-hook-form";
 import axios from 'axios';
 import List from "./List";
 import Carousel from "react-bootstrap/Carousel";
-import {faStar, faEdit, faFilm} from "@fortawesome/free-solid-svg-icons";
+import {faStar, faEdit, faFilm, faCalendarAlt} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 import '../styles.css';
@@ -38,19 +38,20 @@ function Movies(props) {
         <div className="container-fluid overflow-hidden homepage"
              style={{backgroundImage: `url(${currentMovie.backdrop})`}}>
             <div className="filter"/>
-            <main className="display">
-                <div className=" col-6 d-flex flex-column text-white">
-                    <h1 className=" mb-5 title ">{currentMovie.title}</h1>
-                    <p className=" text-center  description mb-5">{currentMovie.release_date}</p>
-                    <p className=" text-center  description mb-5">{currentMovie.description}</p>
-
-                    <div className=" mb-5">{ currentMovie.categories ?  currentMovie.categories.join(' ') : ''}</div>
-                    <p className=" text-center  description mb-5"> <FontAwesomeIcon
-                        icon={faStar}/> {currentMovie.score}</p>
-
+            <main className="display flex-column flex-xl-row">
+                <div className=" movie col-6 h-75 d-flex flex-column align-items-center justify-content-center text-white">
+                    <h1 className=" mb-1 movie_title">{currentMovie.title}</h1>
+                    <p className=" text-center movie_date text-warning mb-5">{currentMovie.release_date}</p>
+                    <p className=" text-center movie_overview mb-5">{currentMovie.description}</p>
+                    <div className="d-flex justify-content-center align-items-center movie_details">
+                        <p className="movie_note"> <FontAwesomeIcon className="text-warning"
+                                                                     icon={faCalendarAlt}/> { currentMovie.categories ?  currentMovie.categories.join(' - ') : ''}</p>
+                    <p className=" text-center w-50"> <FontAwesomeIcon className="text-warning"
+                        icon={faStar}/> {currentMovie.score} / 10</p>
+                    </div>
                 </div>
                 <div className="d-flex col-6 flex-column align-items-center">
-                <Carousel interval={10000} indicators={false} activeIndex={index} className=' w-50 '
+                <Carousel interval={1000000} indicators={false} activeIndex={index} className=' w-50 '
                           onSelect={handleSelect}>
                     {movies.map((movie, index) => {
                         return (
@@ -66,16 +67,15 @@ function Movies(props) {
 
 
                 </Carousel>
-                <div className="buttonContainer d-flex  col-12 justify-content-center mt-2">
-                    <Link to={`/movies/${currentMovie.id}`} className=" btn mr-1 col-2 h-100 btn-ico btn-outline-secondary">Details <FontAwesomeIcon
+                <div className="buttonContainer d-flex flex-column justify-content-start flex-xl-row col-12 justify-content-xl-center mt-2">
+                    <Link to={`/movies/${currentMovie.id}`} className=" btn mr-1 col-xl-2 w-100  btn-ico btn-outline-warning">Details <FontAwesomeIcon
                         icon={faFilm}/></Link>
-                    <Link to={`/movie/edit/${currentMovie.id}`} className="btn col-2 mr-1 h-100 btn-ico btn-outline-secondary">Update <FontAwesomeIcon
+                    <Link to={`/movie/edit/${currentMovie.id}`} className="btn w-100 col-xl-2  mr-1  btn-ico btn-outline-warning">Update <FontAwesomeIcon
                         icon={faEdit}/></Link>
                     <DeleteModal delete={deleteMovie} index={index}/>
                 </div>
                 </div>
             </main>
-            Movies
         </div>
     )
 

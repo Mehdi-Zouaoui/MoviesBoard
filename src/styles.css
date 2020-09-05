@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&family=Montserrat&family=Open+Sans+Condensed:wght@300&display=swap");
 
 .detail_backdrop {
     height: 250px;
@@ -8,9 +8,6 @@
     position: relative;
 }
 
-.title {
-    font-family: 'Anton', sans-serif;
-}
 
 .score {
     height: 10%;
@@ -36,15 +33,13 @@
     background-position: center;
 }
 
-.similarPictures {
-    height: 150px;
-    background-size: cover;
-}
+
 
 .detail_poster {
     height: 323px;
     background-size: contain;
     background-repeat: no-repeat;
+    filter: drop-shadow(0 0 0.75rem rgba(0, 0, 0, 0.58));
 }
 
 .homepage {
@@ -161,11 +156,129 @@
     display: flex;
 }
 
-.movie {
+.project_title {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 27px;
+    margin-bottom: 0;
+}
+
+/* Movie Page */
+.movie_title {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 75px;
+    text-shadow: -1px 0 black, 0 10px black, 1px 0 black, 0 -1px black;
+}
+
+.movie_date {
+    font-size: 15px;
+    justify-content: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.movie_overview {
+    font-size: 20px;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.movie_details {
+    font-size: 15px;
+}
+
+.movie_details .movie_note {
+    width: 25rem;
+}
+
+.movie_details .score {
 
 }
 
-.description {
+/* End of Movie Page */
+
+
+/* Details Page */
+.details_actors {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 30px;
+    margin: 5px 0 20px 0;
+
+}
+
+.name {
+    font-family: 'Montserrat', sans-serif;
     font-size: 15px;
+    font-weight: bold;
+    margin-right: 10px;
+
+}
+.similarPictures {
+    height: 7.5rem;
+    background-size:  cover;
+    background-repeat:   no-repeat;
+    background-position: center center;
+}
+.similarTitle{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+/* End of Details Page */
+.description_title {
+    font-size: 25px;
+    font-weight: bold;
     justify-content: center;
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+.description_cat {
+    font-weight: bold;
+    font-size: 10px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+.castInfo {
+    border-top: solid;
+    border-color: #fec43d;
+    background-color: rgba(0, 0, 0, 0.19);
+}
+
+@media screen and (max-width: 1200px) {
+
+    /* Movie Page */
+    .movie {
+        margin-top: 100px;
+    }
+
+    .movie_title {
+        font-family: 'Archivo Black', sans-serif;
+        font-size: 40px;
+        text-shadow: -1px 0 black, 0 7px black, 1px 0 black, 0 -1px black;
+    }
+
+    .movie_date {
+        font-size: 10px;
+        justify-content: center;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    .movie_overview {
+        font-size: 13px;
+        text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    }
+
+    .movie_details {
+        font-size: 10px;
+    }
+
+    .movie_details .movie_note {
+        width: 400px;
+    }
+
+    .movie_details .score {
+
+    }
+
+
 }

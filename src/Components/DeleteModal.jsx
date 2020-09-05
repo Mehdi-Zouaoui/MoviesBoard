@@ -21,11 +21,12 @@ function DeleteModal(props) {
     };
     const deleteMovie = (index) => {
       props.delete();
+      handleClose();
     };
 
     return (
         <>
-            <Button variant="btn mr-1  col-2 h-100 btn-ico btn-outline-secondary" onClick={handleShow}>Delete <FontAwesomeIcon icon={faTrash}/>
+            <Button variant=" btn mr-1 col-xl-2 w-100  btn-ico btn-outline-warning" onClick={handleShow}>Delete <FontAwesomeIcon icon={faTrash}/>
             </Button>
 
             <Modal show={show} onHide={handleClose}>
