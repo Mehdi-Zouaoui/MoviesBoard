@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {useFieldArray, useForm , Controller} from "react-hook-form";
+import {useFieldArray, useForm, Controller} from "react-hook-form";
 import axios from 'axios';
 import '../styles.css';
 import {BrowserRouter as Router, Switch, Route, Redirect, Link, useParams} from 'react-router-dom'
@@ -8,9 +8,10 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import Button from "react-bootstrap/Button";
 import Actors from "./Actors";
 import SimilarMovies from "./SimilarMovies";
+
 function SearchResult(props) {
 
-    const {register, handleSubmit, setValue , control} = useForm();
+    const {register, handleSubmit, setValue, control} = useForm();
     const [redirectTo, setRedirectTo] = useState("");
     const imgUrl = "http://image.tmdb.org/t/p/original";
     const params = useParams();
@@ -67,7 +68,7 @@ function SearchResult(props) {
                 )
             })
         )
-          };
+    };
 
     const similarFields = (array) => {
 
@@ -100,16 +101,6 @@ function SearchResult(props) {
 
     };
 
-    const badges = (array) => {
-        console.log(array)
-        return (
-            array.map((item, index) => {
-                console.log(item)
-                return (
-                    <h2 className="col-2" key={index}><span className="badge badge-dark ">{item.name}</span></h2>
-                )
-            }))
-    };
 
     const edit = (movie) => {
         console.log(movie);
@@ -254,7 +245,8 @@ function SearchResult(props) {
                     <div className="search_input"> Similar</div>
                     <div className="col-10">
                         <div className="row">
-                            {currentEdit[0] && params.id ? <SimilarMovies similar={currentEdit[0].similar_movies} /> : ''}
+                            {currentEdit[0] && params.id ?
+                                <SimilarMovies similar={currentEdit[0].similar_movies}/> : ''}
                             {params.id ? '' : similarFields(props.data.similar)}
                         </div>
                     </div>
@@ -264,7 +256,7 @@ function SearchResult(props) {
                     <div className="search_input"> Actors</div>
                     <div className="col-10">
                         <div className="row">
-                            {currentEdit[0] && params.id ? <Actors actors={currentEdit[0].actors} /> : ''}
+                            {currentEdit[0] && params.id ? <Actors actors={currentEdit[0].actors}/> : ''}
                             {params.id ? '' : actorsFields(props.data.actors)}
                         </div>
                     </div>
@@ -273,8 +265,18 @@ function SearchResult(props) {
                     <div className="search_input"> Genre</div>
                     <div className="col-10">
                         <div className="row ml-5">
-                            {currentEdit[0] && params.id ? badges(currentEdit[0].categories) : ''}
-                            {params.id ? '' : badges(props.data.genres)}
+                            {currentEdit[0] && params.id ? currentEdit[0].categories.map((item, index) => {
+                                return (
+                                    <h2 className="col-2" key={index}><span className="badge badge-dark ">{item}</span>
+                                    </h2>
+                                )
+                            }) : ''}
+                            {params.id ? '' : props.data.genres.map((item, index) => {
+                                return (
+                                    <h2 className="col-2" key={index}><span
+                                        className="badge badge-dark ">{item.name}</span></h2>
+                                )
+                            })}
                         </div>
                     </div>
 
