@@ -7,6 +7,7 @@ import {faPlus, faTrash} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import Button from "react-bootstrap/Button";
 import Actors from "./Actors";
+import SimilarMovies from "./SimilarMovies";
 function SearchResult(props) {
 
     const {register, handleSubmit, setValue , control} = useForm();
@@ -14,16 +15,9 @@ function SearchResult(props) {
     const imgUrl = "http://image.tmdb.org/t/p/original";
     const params = useParams();
     const [currentEdit, setCurrentEdit] = useState({});
-    const [actors, setActors] = useState([]);
-    const [similar, setSimilar] = useState([]);
-    const { fields, append, prepend, remove, swap, move, insert } = useFieldArray(
-        {
-            control,
-            name: "actors"
-        }
-    );
 
     useEffect(() => {
+
         if (params.id) {
             setCurrentEdit(props.movies.filter(movie => movie.id == params.id));
 
@@ -52,21 +46,18 @@ function SearchResult(props) {
         return (array.map((item, index) => {
                 return (
                     <div className="col-12 row  justify-content-center align-items-center" key={index}>
-                        <div className="col-2 row">
-                            <button className="btn btn-danger buttonStyle col-6">  <FontAwesomeIcon icon={faTrash}/></button>
-                        </div>
                         <div className=" form-group col-4">
                             <label className="label--desc col-8 text-center">name</label>
                             <input type="text" className="actorInput col-12  m-0" id="inputCity"
                                    ref={register} name={'actorName_' + index}/>
                         </div>
-                        <div className="form-group col-3">
+                        <div className="form-group col-4">
                             <label className="label--desc col-8 text-center"> image url</label>
                             <input type="text" className="actorInput col-12" id="inputCity"
                                    ref={register} name={'imgUrl_' + index}/>
 
                         </div>
-                        <div className="form-group col-3">
+                        <div className="form-group col-4">
                             <label className="label--desc col-8 text-center">character</label>
                             <input type="text" className="actorInput col-12" id="inputCity"
                                    ref={register} name={'character_' + index}/>
@@ -79,27 +70,24 @@ function SearchResult(props) {
           };
 
     const similarFields = (array) => {
-        console.log(array);
+
         return (
             array.map((item, index) => {
                 return (
                     <div className="col-12 row justify-content-center align-items-center" key={index}>
-                        <div className="col-2 row">
-                            <button className="btn btn-danger buttonStyle col-6">  <FontAwesomeIcon icon={faTrash}/></button>
-                        </div>
                         <div className=" form-group col-4">
                             <label className="label--desc col-8 text-center">title</label>
                             <input type="text" className="actorInput col-12  m-0" id="inputCity"
                                    ref={register} name={'similarTitle_' + index}/>
 
                         </div>
-                        <div className="form-group col-3">
+                        <div className="form-group col-4">
                             <label className="label--desc col-8 text-center"> image url</label>
                             <input type="text" className="actorInput col-12" id="inputCity"
                                    ref={register} name={'similarPosterUrl_' + index}/>
 
                         </div>
-                        <div className="form-group col-3">
+                        <div className="form-group col-4">
                             <label className="label--desc col-8 text-center">date</label>
                             <input type="text" className="actorInput col-12" id="inputCity"
                                    ref={register} name={'similarDate_' + index}/>
@@ -113,18 +101,14 @@ function SearchResult(props) {
     };
 
     const badges = (array) => {
+        console.log(array)
         return (
             array.map((item, index) => {
-
+                console.log(item)
                 return (
                     <h2 className="col-2" key={index}><span className="badge badge-dark ">{item.name}</span></h2>
                 )
             }))
-    };
-
-
-    const addData = () => {
-
     };
 
     const edit = (movie) => {
@@ -193,7 +177,7 @@ function SearchResult(props) {
         setRedirectTo('/movies')
     };
     return (
-        <div>
+        <div className="mt-5">
             {redirectTo ? <Redirect to={redirectTo}/> : ''}
             {currentEdit ? edit(currentEdit[0]) : ''}
             <form className="m-auto col-9" onSubmit={handleSubmit(onSubmit)}>
@@ -270,10 +254,9 @@ function SearchResult(props) {
                     <div className="search_input"> Similar</div>
                     <div className="col-10">
                         <div className="row">
-                            {currentEdit[0] && params.id ? similarFields(currentEdit[0].similar_movies) : ''}
+                            {currentEdit[0] && params.id ? <SimilarMovies similar={currentEdit[0].similar_movies} /> : ''}
                             {params.id ? '' : similarFields(props.data.similar)}
                         </div>
-                        <button className="btn btn-dark col-6" ><FontAwesomeIcon icon={faPlus}/>  Add actor</button>
                     </div>
                 </div>
 
