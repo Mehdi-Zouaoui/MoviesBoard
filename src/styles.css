@@ -35,12 +35,6 @@
 
 
 
-.detail_poster {
-    height: 323px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    filter: drop-shadow(0 0 0.75rem rgba(0, 0, 0, 0.58));
-}
 
 .homepage {
     height: 100vh;
@@ -166,12 +160,21 @@
     margin: 5px 0 20px 0;
 
 }
+.detail_poster {
+    height: 20rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+    filter: drop-shadow(0 0 0.75rem rgba(0, 0, 0, 0.58));
+}
+
+
 
 .name {
     font-family: 'Montserrat', sans-serif;
     font-size: 15px;
     font-weight: bold;
     margin-right: 10px;
+    width: 50%;
 
 }
 .similarPictures {
@@ -226,6 +229,9 @@
 }
 /* End of Search Page */
 
+.formStyle{
+    margin-left: 9.375rem;
+}
 
 .description_title {
     font-size: 25px;
@@ -283,6 +289,46 @@
     .movie_details .score {
 
     }
+
+    /*Search Page*/
+    .formStyle{
+       margin: auto;
+    }
+    /*End of Search Page */
+
+    /*Details Page */
+    .detail_poster {
+        height:20rem;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center ;
+        filter: drop-shadow(0 0 0.75rem rgba(0, 0, 0, 0.58));
+    }
+    .details{
+        margin-top: 50px;
+    }
+    .detail_backdrop_container{
+        position: absolute;
+        opacity: 0;
+        z-index: 2;
+        top: -1500px;
+        content: none;
+    }
+    .details_actors{
+        font-size: 20px;
+    }
+    .name{
+        width: 30%;
+        font-size: 10px;
+
+    }
+    .similarTitle{
+        font-size: 10px;
+    }
+    .actorPictures{
+        height: 40px;
+    }
+    /* End of Details Page */
 
 
 }

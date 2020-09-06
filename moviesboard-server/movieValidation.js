@@ -15,6 +15,7 @@ movieValidation.patch('/:id', patchValidator);
 
 function createAndUpdateValidator(req, res, next) {
     const valid = validate(req.body);
+
     if (!valid) {
         const [err] = validate.errors;
 

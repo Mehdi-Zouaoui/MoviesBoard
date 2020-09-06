@@ -10,11 +10,21 @@ function Search() {
     const {register, handleSubmit} = useForm();
 
     const onSubmit = (data) => {
+        console.log(data);
         setFilms([]);
-        axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${capitalizeFirstLetter(data.title)}`).then(item => {
-            console.log(item.data);
-            setFilms(oldFilms => [...oldFilms , item]);
-        });
+        if(data.date.length <= 0 && data.title.length > 0){
+            axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${capitalizeFirstLetter(data.title)}`).then(item => {
+                console.log(item.data);
+                setFilms(oldFilms => [...oldFilms , item]);
+            });
+        }
+        // if(data.title.length <= 0 && data.date.length > 0){
+        //     axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${capitalizeFirstLetter(data.title)}`).then(item => {
+        //         console.log(item.data);
+        //     });
+        // }
+
+
     };
 
     const  capitalizeFirstLetter = (string)  => {
@@ -27,15 +37,15 @@ function Search() {
     }, [films]);
 
     return (
-        <div>
+        <div className="mt-5">
             <form method="PUT" onSubmit={handleSubmit(onSubmit)}
-                  className="mt-5 mx-auto py-3  col-10  ">
+                  className="m-auto col-9">
                 <div className="form-row mb-4">
-                    <div className="search_input"> Titre</div>
-                    <div className="col-10">
+                    <div className="search_input m-auto"> Titre</div>
+                    <div className=" col-xl-10 col-12">
                         <div className="row row-space">
                             <div className="col-12">
-                                <input type="text" className="inputStyle col-10" id="inputEmail4" name="title"
+                                <input type="text" className="inputStyle col-12" id="inputEmail4" name="title"
                                        ref={register}/>
                             </div>
                         </div>
@@ -43,18 +53,18 @@ function Search() {
                 </div>
 
                 <div className="form-row mb-4">
-                    <div className="search_input"> Date</div>
-                    <div className="col-10">
+                    <div className="search_input m-auto"> Date</div>
+                    <div className="col-xl-10 col-12">
                         <div className="row row-space">
                             <div className="col-12">
-                                <input type="date" id='date' name="date" className=" inputStyle  col-10" ref={register}/>
+                                <input type="date" id='date' name="date" className=" inputStyle  col-12" ref={register}/>
 
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <input className="btn mt-3 btn-dark col-4 " type="submit" value="Envoyer"/>
+                <input className="btn mt-3 m-auto btn-dark col-6 " type="submit" value="Envoyer"/>
 
             </form>
             {films.length ? <List array={films}/> : ""}

@@ -1,7 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {useForm} from "react-hook-form";
 import axios from 'axios';
-import List from "./List";
 import Carousel from "react-bootstrap/Carousel";
 import {faStar, faEdit, faFilm, faCalendarAlt} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
@@ -14,7 +12,6 @@ function Movies(props) {
     const [index, setIndex] = useState(0);
     const [movies, setMovies] = useState([]);
     const [currentMovie, setCurrentMovie] = useState({});
-    const params  = useParams();
 
     useEffect(() => {
         console.log(props.movies);

@@ -1,17 +1,16 @@
 import React, {useEffect, useState} from "react";
-import {useFieldArray, useForm, Controller} from "react-hook-form";
+import {useForm} from "react-hook-form";
 import axios from 'axios';
 import '../styles.css';
-import {BrowserRouter as Router, Switch, Route, Redirect, Link, useParams} from 'react-router-dom'
-import {faPlus, faTrash} from "@fortawesome/free-solid-svg-icons";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import Button from "react-bootstrap/Button";
+import {Redirect, useParams} from 'react-router-dom'
 import Actors from "./Actors";
 import SimilarMovies from "./SimilarMovies";
 
+
 function SearchResult(props) {
 
-    const {register, handleSubmit, setValue, control} = useForm();
+    const {register, handleSubmit, setValue} = useForm({
+    });
     const [redirectTo, setRedirectTo] = useState("");
     const imgUrl = "http://image.tmdb.org/t/p/original";
     const params = useParams();
@@ -50,18 +49,18 @@ function SearchResult(props) {
                         <div className=" form-group col-4">
                             <label className="label--desc col-8 text-center">name</label>
                             <input type="text" className="actorInput col-12  m-0" id="inputCity"
-                                   ref={register} name={'actorName_' + index}/>
+                                   ref={register} name={`actor_${index}_name`}/>
                         </div>
                         <div className="form-group col-4">
                             <label className="label--desc col-8 text-center"> image url</label>
                             <input type="text" className="actorInput col-12" id="inputCity"
-                                   ref={register} name={'imgUrl_' + index}/>
+                                   ref={register} name={`actor_${index}_imgUrl`}/>
 
                         </div>
                         <div className="form-group col-4">
                             <label className="label--desc col-8 text-center">character</label>
                             <input type="text" className="actorInput col-12" id="inputCity"
-                                   ref={register} name={'character_' + index}/>
+                                   ref={register} name={`actor_${index}_character`}/>
 
                         </div>
                     </div>
@@ -101,81 +100,125 @@ function SearchResult(props) {
 
     };
 
+const updateFiels = (data , query) => {
+    const array = [];
+    let index = 0;
+    let test ={};
+    for(const key in data){
+        if(key.includes(query)){
+            if(key.includes(query  + JSON.stringify(index))){
+                test[key.split(`${query + index}_`)[1]] = data[key];
+            }
+            else{
+                array.push(test);
+                test = {};
+                index++;
+                test[key.split(`${query + index}_`)[1]] = data[key];
+            }
+        }
+    }
+    return array
+};
 
     const edit = (movie) => {
-        console.log(movie);
         if (movie !== undefined) {
+
             setValue('title', movie.title);
             setValue("overview", movie.description);
             setValue("date", movie.release_date);
             setValue("note", movie.score);
-            setValue("poster", imgUrl + movie.poster);
-            setValue("backdrop", imgUrl + movie.backdrop);
-            console.log(movie.actors);
+            setValue("poster",  movie.poster);
+            setValue("backdrop",  movie.backdrop);
+
             movie.actors.forEach((item, index) => {
-                setValue(`actorName_${index}`, item.name);
-                setValue(`imgUrl_${index}`, imgUrl + item.profile_path);
-                setValue(`character_${index}`, item.character)
+
+                setValue(`actor_${index}_name`, item.name);
+                setValue(`actor_${index}_imgUrl`, imgUrl + item.profile_path);
+                setValue(`actor_${index}_character`, item.character)
+
             });
 
             movie.similar_movies.forEach((item, index) => {
+
                 setValue(`actorName_${index}`, item.title);
                 setValue(`imgUrl_${index}`, imgUrl + item.poster_path);
                 setValue(`character_${index}`, item.release_date)
+
             });
 
         }
     };
     const onSubmit = (data) => {
-        const categories = [];
-        props.data.genres.forEach(item => {
-            categories.push(item.name)
-        });
+        if(!params.id) {
+            const categories = [];
+            props.data.genres.forEach(item => {
+                categories.push(item.name)
+            });
 
-        const actors = props.data.actors.map(item => {
-            return ({
-                    name: item.name,
-                    photo: imgUrl + item.profile_path,
-                    character: item.character
-                }
-            )
-        });
-        const similarMovies = props.data.similar.map(item => {
-            return (
-                {
-                    title: item.title,
-                    poster: imgUrl + item.poster_path,
-                    release_date: item.release_date
-                }
-            )
-        });
-        console.log(similarMovies);
-        const movieObj = {
-            title: data.title,
-            release_date: data.date,
-            categories: categories,
-            score: data.note,
-            description: data.overview,
-            poster: data.poster,
-            backdrop: data.backdrop,
-            actors: actors,
-            similar_movies: similarMovies,
-        };
-        axios.post("http://localhost:3000/movies", movieObj).then(res => {
-            console.log('movie res', res);
-        }).catch(err => console.error(err));
+            const actors = props.data.actors.map(item => {
+                return ({
+                        name: item.name,
+                        photo: imgUrl + item.profile_path,
+                        character: item.character
+                    }
+                )
+            });
+            const similarMovies = props.data.similar.map(item => {
+                return (
+                    {
+                        title: item.title,
+                        poster: imgUrl + item.poster_path,
+                        release_date: item.release_date
+                    }
+                )
+            });
+            console.log(similarMovies);
+            const movieObj = {
+                title: data.title,
+                release_date: data.date,
+                categories: categories,
+                score: data.note,
+                description: data.overview,
+                poster: data.poster,
+                backdrop: data.backdrop,
+                actors: actors,
+                similar_movies: similarMovies,
+            };
+            // axios.post("http://localhost:3000/movies", movieObj).then(res => {
+            //     console.log('movie res', res);
+            // }).catch(err => console.error(err));
+            console.log(movieObj)
+        }else{
 
+            const actors = updateFiels(data , 'actor_');
+            const similar = updateFiels(data , 'similar_');
+
+            const movieObj = {
+                title: data.title,
+                release_date: data.date,
+                categories: currentEdit[0].categories,
+                score: data.note,
+                description: data.overview,
+                poster: data.poster,
+                backdrop: data.backdrop,
+                actors: actors,
+                similar_movies: similar,
+            };
+            console.log('MY DATA' , movieObj);
+            axios.put("http://localhost:3000/movies/" + params.id , movieObj).then(res => {
+                console.log('res' , res)
+            }).catch(err => console.error(err));
+        }
         setRedirectTo('/movies')
     };
     return (
         <div className="mt-5">
             {redirectTo ? <Redirect to={redirectTo}/> : ''}
             {currentEdit ? edit(currentEdit[0]) : ''}
-            <form className="m-auto col-9" onSubmit={handleSubmit(onSubmit)}>
-
+            <form className=" formStyle col-9" onSubmit={handleSubmit(onSubmit)}>
                 <div className="form-row mb-4">
-                    <div className="search_input"> Name</div>
-                    <div className="col-10">
+                    <div className="search_input m-auto"> Name</div>
+                    <div className="col-xl-10 col-12">
                         <div className="row row-space">
                             <div className="col-12">
                                 <input type="text" className="inputStyle col-12" id="inputEmail4" name="title"
@@ -187,8 +230,8 @@ function SearchResult(props) {
                 </div>
 
                 <div className="form-row mb-4">
-                    <div className="search_input"> Details</div>
-                    <div className="col-10">
+                    <div className="search_input m-auto"> Details</div>
+                    <div className="col-xl-10 col-12">
                         <div className="row justify-content-between row-space">
                             <div className="col-6">
                                 <input type="text" className="inputStyle col-12" id="inputEmail4" name="date"
@@ -208,8 +251,8 @@ function SearchResult(props) {
                 </div>
 
                 <div className="form-row mb-4">
-                    <div className="search_input"> Poster</div>
-                    <div className="col-10">
+                    <div className="search_input m-auto"> Poster</div>
+                    <div className="col-xl-10 col-12">
                         <div className="row row-space">
                             <div className="col-12">
                                 <input type="text" className="inputStyle col-12" id="inputEmail4" name="poster"
@@ -219,8 +262,8 @@ function SearchResult(props) {
                     </div>
                 </div>
                 <div className="form-row mb-4">
-                    <div className="search_input"> Backdrop</div>
-                    <div className="col-10">
+                    <div className="search_input m-auto"> Backdrop</div>
+                    <div className="col-xl-10 col-12">
                         <div className="row row-space">
                             <div className="col-12">
                                 <input type="text" className="inputStyle col-12" id="inputEmail4" name="backdrop"
@@ -230,8 +273,8 @@ function SearchResult(props) {
                     </div>
                 </div>
                 <div className="form-row m-b-55">
-                    <div className="search_input"> Description</div>
-                    <div className="col-10">
+                    <div className="search_input m-auto"> Description</div>
+                    <div className="col-xl-10 col-12">
                         <div className="row row-space">
                             <div className="col-12">
                             <textarea className="textAreaStyle col-12 form-group" id="inputEmail4"
@@ -242,23 +285,19 @@ function SearchResult(props) {
                     </div>
                 </div>
                 <div className="form-row mb-4">
-                    <div className="search_input"> Similar</div>
-                    <div className="col-10">
-                        <div className="row">
+                    <div className="search_input m-auto"> Similar</div>
+                    <div className="col-xl-10 col-12 d-flex justify-content-start ">
                             {currentEdit[0] && params.id ?
-                                <SimilarMovies similar={currentEdit[0].similar_movies}/> : ''}
+                                <SimilarMovies  register={register({required:true})} similar={currentEdit[0].similar_movies}/> : ''}
                             {params.id ? '' : similarFields(props.data.similar)}
-                        </div>
                     </div>
                 </div>
 
                 <div className="form-row mb-4">
-                    <div className="search_input"> Actors</div>
-                    <div className="col-10">
-                        <div className="row">
-                            {currentEdit[0] && params.id ? <Actors actors={currentEdit[0].actors}/> : ''}
+                    <div className="search_input m-auto"> Actors</div>
+                    <div className="col-xl-10 col-12">
+                            {currentEdit[0] && params.id ? <Actors register={register({required:true})} actors={currentEdit[0].actors}/> : ''}
                             {params.id ? '' : actorsFields(props.data.actors)}
-                        </div>
                     </div>
                 </div>
                 <div className="form-row">
@@ -279,10 +318,10 @@ function SearchResult(props) {
                             })}
                         </div>
                     </div>
-
+                    <button type="submit" className="btn col-6 btn-warning">Sign in</button>
                 </div>
 
-                <button type="submit" className="btn btn-primary">Sign in</button>
+
             </form>
         </div>);
 }
