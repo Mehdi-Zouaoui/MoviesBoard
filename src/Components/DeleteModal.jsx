@@ -1,7 +1,7 @@
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import React, {useEffect, useState} from "react";
-import {faTrash} from "@fortawesome/free-solid-svg-icons";
+import {faTrash , faPlus} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 

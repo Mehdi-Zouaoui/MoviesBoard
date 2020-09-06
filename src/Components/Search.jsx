@@ -31,8 +31,8 @@ function Search() {
             <form method="PUT" onSubmit={handleSubmit(onSubmit)}
                   className="mt-5 mx-auto py-3  col-10  ">
                 <div className="form-row mb-4">
-                    <div className="name"> Titre</div>
-                    <div className="value">
+                    <div className="search_input"> Titre</div>
+                    <div className="col-10">
                         <div className="row row-space">
                             <div className="col-12">
                                 <input type="text" className="inputStyle col-10" id="inputEmail4" name="title"
@@ -43,11 +43,12 @@ function Search() {
                 </div>
 
                 <div className="form-row mb-4">
-                    <div className="name"> Date</div>
-                    <div className="value">
+                    <div className="search_input"> Date</div>
+                    <div className="col-10">
                         <div className="row row-space">
                             <div className="col-12">
                                 <input type="date" id='date' name="date" className=" inputStyle  col-10" ref={register}/>
+
                             </div>
                         </div>
                     </div>
