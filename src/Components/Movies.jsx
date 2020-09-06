@@ -3,18 +3,17 @@ import axios from 'axios';
 import Carousel from "react-bootstrap/Carousel";
 import {faStar, faEdit, faFilm, faCalendarAlt} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-
 import '../styles.css';
-import {Link, useParams} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import DeleteModal from "./DeleteModal";
 
 function Movies(props) {
+
     const [index, setIndex] = useState(0);
     const [movies, setMovies] = useState([]);
     const [currentMovie, setCurrentMovie] = useState({});
 
     useEffect(() => {
-        console.log(props.movies);
         setMovies(props.movies);
         setCurrentMovie(props.currentMovie);
     }, []);
@@ -25,10 +24,11 @@ function Movies(props) {
         setIndex(selectedIndex)
     };
     const deleteMovie = () => {
-        axios.delete(`http://localhost:3000/movies/` + currentMovie.id).then((item) => {
+        axios.delete(`http://localhost:3000/movies/` + currentMovie.id)
+            .then((item) => {
             console.log(item);
-        })  .catch(err => console.error(err));
-
+        })
+            .catch(err => console.error(err));
     };
 
     return (
@@ -48,29 +48,32 @@ function Movies(props) {
                     </div>
                 </div>
                 <div className="d-flex col-6 flex-column align-items-center">
-                <Carousel interval={1000000} indicators={false} activeIndex={index} className=' w-50 '
-                          onSelect={handleSelect}>
-                    {movies.map((movie, index) => {
-                        return (
-                            <Carousel.Item key={index}>
-                                <img
-                                    className="d-block w-100"
-                                    src={movie.poster}
-                                    alt="First slide"
+                    <Carousel interval={10000}
+                              indicators={false}
+                              activeIndex={index}
+                              className=' w-50 '
+                              onSelect={handleSelect}>
+                            {movies.map((movie, index) => {
+                             return (
+                                <Carousel.Item key={index}>
+                                    <img className="d-block w-100"
+                                        src={movie.poster}
+                                        alt="First slide"
                                 />
-                            </Carousel.Item>
-                        )
+                                </Carousel.Item>
+                             )
                     })}
-
-
-                </Carousel>
-                <div className="buttonContainer d-flex flex-column justify-content-start flex-xl-row col-12 justify-content-xl-center mt-2">
-                    <Link to={`/movies/${currentMovie.id}`} className=" btn mr-1 col-xl-2 w-100  btn-ico btn-outline-warning">Details <FontAwesomeIcon
-                        icon={faFilm}/></Link>
-                    <Link to={`/movie/edit/${currentMovie.id}`} className="btn w-100 col-xl-2  mr-1  btn-ico btn-outline-warning">Update <FontAwesomeIcon
-                        icon={faEdit}/></Link>
-                    <DeleteModal delete={deleteMovie} index={index}/>
-                </div>
+                     </Carousel>
+                    <div className="buttonContainer d-flex flex-column justify-content-start flex-xl-row col-12 justify-content-xl-center mt-2">
+                        <Link to={`/movies/${currentMovie.id}`}
+                              className=" btn mr-1 col-xl-2 w-100  btn-ico btn-outline-warning">Details <FontAwesomeIcon icon={faFilm}/>
+                        </Link>
+                        <Link to={`/movie/edit/${currentMovie.id}`}
+                              className="btn w-100 col-xl-2  mr-1  btn-ico btn-outline-warning">Update <FontAwesomeIcon icon={faEdit}/>
+                        </Link>
+                        <DeleteModal delete={deleteMovie}
+                                     index={index}/>
+                    </div>
                 </div>
             </main>
         </div>

@@ -1,7 +1,7 @@
 {
   "movies": [
     {
-      "title": "Pokémon Detective Pikachu 2000",
+      "title": "Pokémon Detective Pikachu ",
       "release_date": "2019-05-03",
       "categories": [
         "Action",
@@ -34,18 +34,7 @@
           "character": "Howard Clifford / Mewtwo (voice)"
         }
       ],
-      "similar_movies": [
-        {
-          "title": "Heat",
-          "poster": "http://image.tmdb.org/t/p/original/rrBuGu0Pjq7Y2BWSI6teGfZzviY.jpg",
-          "release_date": "1995-12-15"
-        },
-        {
-          "title": "Radius",
-          "poster": "http://image.tmdb.org/t/p/original/3BHYW2Wlcu9ES41Y4OTeSgkhYkD.jpg",
-          "release_date": "2017-08-25"
-        }
-      ],
+      "similar_movies": [],
       "id": 10
     },
     {
@@ -90,6 +79,11 @@
           "name": "Carrie Coon",
           "photo": "http://image.tmdb.org/t/p/original/19BIUqUTq4dXCCes7L1UP4ypqfQ.jpg",
           "character": "Margo Dunne"
+        },
+        {
+          "name": "Souad Belhaj",
+          "photo": "http://image.tmdb.org/t/p/original/19BIUqUTq4dXCCes7L1UP4ypqfQ.jpg",
+          "character": "Sou La Menace"
         }
       ],
       "similar_movies": [
@@ -183,6 +177,76 @@
         }
       ],
       "id": 12
+    },
+    {
+      "title": "Space Jam",
+      "release_date": "1996-11-15",
+      "categories": [
+        "Animation",
+        "Family",
+        "Comedy",
+        "Science Fiction",
+        "Adventure"
+      ],
+      "score": "6.8",
+      "description": "Swackhammer, an evil alien theme park owner, needs a new attraction at Moron Mountain. When his gang, the Nerdlucks, heads to Earth to kidnap Bugs Bunny and the Looney Tunes, Bugs challenges them to a basketball game to determine their fate. The aliens agree, but they steal the powers of NBA basketball players, including Larry Bird and Charles Barkley -- so Bugs gets some help from superstar Michael Jordan.",
+      "poster": "http://image.tmdb.org/t/p/original/w0y7mNCiiHdyo05KlguqQS28Frn.jpg",
+      "backdrop": "http://image.tmdb.org/t/p/original/54lisrR60aaS9w7VjIrzX2rxCct.jpg",
+      "actors": [
+        {
+          "name": "Michael Jordan",
+          "photo": "http://image.tmdb.org/t/p/original/tCqjwlROe98wYbcRhCcp3qYsUc5.jpg",
+          "character": "Self"
+        },
+        {
+          "name": "Wayne Knight",
+          "photo": "http://image.tmdb.org/t/p/original/xlGqbZjn48xAUa7eqTybZP360w0.jpg",
+          "character": "Stan Podolak"
+        },
+        {
+          "name": "Theresa Randle",
+          "photo": "http://image.tmdb.org/t/p/original/myBU9qG6wXHJfYF9cl07rvQmhUB.jpg",
+          "character": "Juanita Jordan"
+        },
+        {
+          "name": "Manner Washington",
+          "photo": "http://image.tmdb.org/t/p/originalnull",
+          "character": "Jeffery Jordan"
+        },
+        {
+          "name": "Eric Gordon",
+          "photo": "http://image.tmdb.org/t/p/originalnull",
+          "character": "Marcus Jordan"
+        },
+        {
+          "name": "Penny Bae Bridges",
+          "photo": "http://image.tmdb.org/t/p/original/ebIfTtoNxMigFCMpNXC4QHjNB5I.jpg",
+          "character": "Jasmine Jordan"
+        }
+      ],
+      "similar_movies": [
+        {
+          "title": "Like Mike",
+          "poster": "http://image.tmdb.org/t/p/original/xXON2phPAvkLrRZfDate14ATk6J.jpg",
+          "release_date": "2002-07-03"
+        },
+        {
+          "title": "Who Framed Roger Rabbit",
+          "poster": "http://image.tmdb.org/t/p/original/lYfRc57Kx9VgLZ48iulu0HKnM15.jpg",
+          "release_date": "1988-06-21"
+        },
+        {
+          "title": "Pixie Hollow Games",
+          "poster": "http://image.tmdb.org/t/p/original/ks1vDUSOW7BO2UsRi4PD6Ova0zT.jpg",
+          "release_date": "2011-12-24"
+        },
+        {
+          "title": "The Adventures of Rocky & Bullwinkle",
+          "poster": "http://image.tmdb.org/t/p/original/9VIU9RZ5yIVYQzXOFKX6nrHK0pl.jpg",
+          "release_date": "2000-06-30"
+        }
+      ],
+      "id": 13
     }
   ]
 }

@@ -11,12 +11,11 @@ import axios from "axios";
 
 
 function App() {
-    // const {index} = useParams();
     const [movies, setMovies] = useState([]);
     const [currentMovie, setCurrentMovie] = useState({});
 
+
     useEffect(() => {
-        // console.log(index);
         axios.get(`http://localhost:3000/movies`).then(item => {
             console.log(item.data);
             setMovies(item.data);
