@@ -1,12 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Archivo+Black&family=Montserrat&family=Open+Sans+Condensed:wght@300&display=swap");
 
-.detail_backdrop {
-    height: 250px;
-    width: 80%;
-    background-size: cover;
-    background-position: top left;
-    position: relative;
-}
+
 
 
 .score {
@@ -16,13 +10,7 @@
     background: #fec43d;
 }
 
-.details {
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    margin: -75px auto 0 auto;
-    height: 100%;
-}
+
 
 .actorPictures {
     border-radius: 50%;
@@ -154,10 +142,19 @@
 
 
 /* Details Page */
+.details {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin: -75px auto 0 auto;
+    height: 20.625rem;
+}
+
 .details_actors {
     font-family: 'Archivo Black', sans-serif;
     font-size: 30px;
     margin: 5px 0 20px 0;
+    background-size: 100% 100%;
 
 }
 .detail_poster {
@@ -166,7 +163,13 @@
     background-repeat: no-repeat;
     filter: drop-shadow(0 0 0.75rem rgba(0, 0, 0, 0.58));
 }
-
+.detail_backdrop {
+    height: 250px;
+    width: 80%;
+    background-size: cover;
+    background-position: top left;
+    position: relative;
+}
 
 
 .name {
@@ -179,7 +182,7 @@
 }
 .similarPictures {
     height: 7.5rem;
-    background-size:  cover;
+    background-size: 100% 100%;
     background-repeat:   no-repeat;
     background-position: center center;
 }
