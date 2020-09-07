@@ -41,14 +41,15 @@ function List(props) {
 
     return (
         <div>
-            {!props.array.length ? <div>Loading</div> :
+            {!card.length ? <div className="mt-2">No Movies Found</div> :
                 <Dropdown className="mt-2">
                     <Dropdown.Toggle style={{marginBottom : '10px'}}
+
                                      variant="success"
                                      id="dropdown-basic">
                         Research
                     </Dropdown.Toggle>
-                    <Dropdown.Menu>
+                    <Dropdown.Menu style={{ left : '-40px !important'}}>
                         {card.map((item, index) => {
                             return (
                                 <Dropdown.Item onClick={() => getData(item)}

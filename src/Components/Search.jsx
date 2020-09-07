@@ -39,7 +39,7 @@ function Search(props) {
         <div className="mt-5">
             <form method="PUT"
                   onSubmit={handleSubmit(onSubmit)}
-                  className="m-auto col-9">
+                  className=" formStyle col-9">
                 <div className="form-row mb-4">
                     <div className="search_input m-auto"> Titre</div>
                     <div className=" col-xl-10 col-12">
@@ -49,6 +49,7 @@ function Search(props) {
                                        className="inputStyle col-12"
                                        id="inputEmail4"
                                        name="title"
+                                       required
                                        ref={register}/>
                             </div>
                         </div>
@@ -69,8 +70,13 @@ function Search(props) {
                         </div>
                     </div>
                 </div>
+                <div className="form-row mb-4">
+                    <div className="search_input m-auto"/>
+                    <div className="col-xl-10 col-12">
                 <input className="btn mt-3 m-auto btn-dark col-6 " type="submit" value="Envoyer"/>
-            </form>
+                    </div>
+                </div>
+                </form>
             {films.length ? <List array={films}  add={addMovie} /> : ''}
         </div>
     )

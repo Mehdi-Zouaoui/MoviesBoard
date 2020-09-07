@@ -39,6 +39,11 @@ function App() {
 
     const addMovie = (movie) => {
         console.log(movie);
+        let id = 0;
+        movies.forEach(item => {
+            id = item.id
+        });
+        movie['id']= id+1;
             setMovies([...movies , movie])
     };
     const updateMovie = (movie , id) => {
