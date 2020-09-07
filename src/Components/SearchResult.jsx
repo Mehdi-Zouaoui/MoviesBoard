@@ -313,7 +313,7 @@ function SearchResult(props) {
                         </div>
                     </div>
                 </div>
-                <div className="form-row mb-4">
+                <div className="form-row mb-4 align-items-end">
                     <div className="search_input m-auto"> Similar</div>
                     <div className="col-xl-10 col-12 d-flex justify-content-start ">
                         {currentEdit[0] && params.id ?
@@ -351,8 +351,11 @@ function SearchResult(props) {
                     </div>
 
                 </div>
-                <button type="submit" className="btn col-4 ml-5 btn-warning">Sign in</button>
-
+                <div className="form-row mb-4">
+                    <div className="search_input m-auto"/>
+                    <div className="col-10"><button type="submit" className="btn col-4 mb-2 btn-dark text-white">Valider</button>
+                    </div>
+                </div>
             </form>
         </div>);
 }

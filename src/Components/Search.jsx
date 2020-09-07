@@ -71,7 +71,7 @@ function Search(props) {
                 </div>
                 <input className="btn mt-3 m-auto btn-dark col-6 " type="submit" value="Envoyer"/>
             </form>
-            {films.length ? <List array={films}  add={addMovie} /> : ""}
+            {films.length ? <List array={films}  add={addMovie} /> : ''}
         </div>
     )
 }

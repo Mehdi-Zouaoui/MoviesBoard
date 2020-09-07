@@ -21,17 +21,12 @@ function Actors(props) {
     });
 
     return (
-        <div className="row justify-content-center justify-content-xl-start">
+        <div className="row justify-content-center justify-content-xl-end">
             {fields.map((item, index) => {
                 return (
                     <div className="col-12 row justify-content-center justify-content-lg-between flex-wrap align-items-center" key={index}>
-                        <div className="col-xl-2 col-6 justify-content-center row">
-                            <button type="button" className="btn btn-danger buttonStyle col-6"
-                                    onClick={() => remove(index)}>
-                                <FontAwesomeIcon icon={faTrash}/>
-                            </button>
-                        </div>
-                        <div className="form-group col-4">
+
+                        <div className="form-group col-12 col-xl-4 row justify-content-center">
                             <label className="label--desc col-8 text-center">name</label>
                             <input type="text"
                                    className="actorInput col-12 m-0"
@@ -54,6 +49,12 @@ function Actors(props) {
                                    id="inputCity"
                                    defaultValue={`${item.character}`}
                                    ref={props.register} name={`actor_${index}_character`}/>
+                        </div>
+                        <div className="col-xl-2 col-6 justify-content-center row">
+                            <button type="button" className="btn btn-danger buttonStyle col-6"
+                                    onClick={() => remove(index)}>
+                                <FontAwesomeIcon icon={faTrash}/>
+                            </button>
                         </div>
                     </div>
                 );

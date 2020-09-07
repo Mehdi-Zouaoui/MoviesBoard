@@ -20,14 +20,11 @@ function SimilarMovies(props) {
 
     });
     return (
-        <div className="row justify-content-center justify-content-xl-start">
+        <div className="row justify-content-center justify-content-xl-end">
             {fields.map((item, index) => {
                 return (
                     <div className="col-12 row justify-content-center justify-content-lg-between  align-items-center" key={index}>
-                        <div className="col-xl-2 col-6 justify-content-center row">
-                            <button type="button" className="btn btn-danger buttonStyle col-6" onClick={() => remove(index)}>
-                                <FontAwesomeIcon icon={faTrash}/></button>
-                        </div>
+
                         <div className=" form-group col-12 col-xl-4 row justify-content-center ">
                             <label className="label--desc col-8 text-center">Title</label>
                             <input type="text" className="actorInput col-12  m-0" id="inputCity"
@@ -48,7 +45,10 @@ function SimilarMovies(props) {
                                    ref={props.register} name={`similar_${index}_release_date`}/>
 
                         </div>
-
+                        <div className="col-xl-2 col-6 justify-content-center row">
+                            <button type="button" className="btn btn-danger buttonStyle col-6" onClick={() => remove(index)}>
+                                <FontAwesomeIcon icon={faTrash}/></button>
+                        </div>
                     </div>
 
                 );

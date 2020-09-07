@@ -5,6 +5,8 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {useParams} from "react-router";
 import DeleteModal from "./DeleteModal";
 import {Link} from "react-router-dom";
+import defaultActor from "../assets/default-profile.png"
+import defaultSimilar from "../assets/poster_default.png"
 
 function Details(props) {
 
@@ -53,11 +55,13 @@ function Details(props) {
                     <div className="d-flex flex-wrap justify-content-center col-12">
                         {details.actors && details.actors.map((item , index) => {
                             return (
+
                                 <div key={index}
                                      className="d-flex col-6 align-items-center justify-content-xl-between justify-content-around"
                                      style={{height : '55px'}}>
+
                                     <div className="actorPictures border border-dark"
-                                         style={{backgroundImage: `url(${item.photo})`}}/>
+                                         style={{backgroundImage: `url(${item.photo}) ,url(${defaultActor})`}}/>
                                     <div className="name d-flex align-items-center">{item.name}</div>
                                 </div>
                             )
@@ -72,7 +76,7 @@ function Details(props) {
                             return (
                                 <div key={index} className="col-6" >
                                     <div className=" similarPictures border border-dark"
-                                         style={{backgroundImage: `url(${item.poster})`}}/>
+                                         style={{backgroundImage: `url(${item.poster}) , url(${defaultSimilar})`}}/>
                                     <div className=" similarTitle col-12"
                                          key={index}>{item.title}</div>
                                 </div>
