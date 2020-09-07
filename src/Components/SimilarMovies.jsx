@@ -25,7 +25,7 @@ function SimilarMovies(props) {
                 return (
                     <div className="col-12 row justify-content-center justify-content-lg-between  align-items-center" key={index}>
                         <div className="col-xl-2 col-6 justify-content-center row">
-                            <button className="btn btn-danger buttonStyle col-6" onClick={() => remove(index)}>
+                            <button type="button" className="btn btn-danger buttonStyle col-6" onClick={() => remove(index)}>
                                 <FontAwesomeIcon icon={faTrash}/></button>
                         </div>
                         <div className=" form-group col-12 col-xl-4 row justify-content-center ">

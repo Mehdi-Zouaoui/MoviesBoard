@@ -1,15 +1,19 @@
 import React, {useEffect, useState} from "react";
 import '../styles.css';
-import {faCalendarAlt, faList, faStar} from "@fortawesome/free-solid-svg-icons";
+import {faCalendarAlt, faList, faStar , faTrash , faEdit} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {useParams} from "react-router";
+import DeleteModal from "./DeleteModal";
+import {Link} from "react-router-dom";
 
 function Details(props) {
 
     const params  = useParams();
     const [details, setDetails] = useState({});
 
+
     useEffect(() => {
+        console.log(props)
         const currentMovie = props.movies.filter( movie => movie.id == params.id);
         setDetails(currentMovie[0]);
     }, []);
@@ -19,12 +23,12 @@ function Details(props) {
         {details ?
             <div className="container">
                 <div className="row detail_backdrop_container m-auto">
-                    <div className='detail_backdrop row col-10 m-auto'
+                    <div className='detail_backdrop row col-12 m-auto'
                          style={{backgroundImage: `url(${details.backdrop})`}}/>
                 </div>
             <div className="details d-flex flex-xl-row flex-xl-nowrap justify-content-center flex-wrap col-9">
                 <div className='detail_poster col-12 col-xl-3' style={{backgroundImage: `url(${details.poster})`}}/>
-                <div className="col-10 d-flex flex-column text-center text-xl-left mb-2 ">
+                <div className="col-12 d-flex flex-column text-center text-xl-left mb-2 ">
                     <p className="description_title">{details.title}</p>
                     <div className="col-xl-7 col-12 description_cat d-flex  justify-content-between align-items-center">
                         <p><FontAwesomeIcon className="text-warning mr-1"
@@ -35,9 +39,15 @@ function Details(props) {
                                             icon={faStar}/>{details.score}</p>
                     </div>
                         <p className="description">{details.description}</p>
+                    <div className=' d-flex justify-content-start'>
+                        <DeleteModal noWord={true} delete={props.delete} id={details.id}/>
+                        <Link to={`/movie/edit/${props.currentMovie.id}`}
+                              className="btn col-1 mr-1  btn-dark"><FontAwesomeIcon icon={faEdit}/>
+                        </Link>
+                    </div>
                 </div>
             </div>
-            <div className=" castInfo d-flex  flex-column flex-xl-row  col-10 m-auto">
+            <div className=" castInfo d-flex  flex-column flex-xl-row  col-12 m-auto">
                 <div className="col-xl-6 col-12 d-flex flex-column" style={{height :"270px"}}>
                     <div className="details_actors"> Actors</div>
                     <div className="d-flex flex-wrap justify-content-center col-12">
@@ -72,6 +82,7 @@ function Details(props) {
                     </div>
                 </div>
             </div>
+
             </div>
                 :''}
         </div>

@@ -9,16 +9,29 @@ import SimilarMovies from "./SimilarMovies";
 
 function SearchResult(props) {
 
+    // Utilisation de useForm https://react-hook-form.com/api#useForm
+    // Facilite la gestion de formulaire grace à l'attribut register qui a le même comportement que  value et onChange des inputs classiques
+    // Register est dépendant de l'attribut name de l'input
     const {register, handleSubmit, setValue} = useForm();
     const [redirectTo, setRedirectTo] = useState("");
     const imgUrl = "http://image.tmdb.org/t/p/original";
     const params = useParams();
     const [currentEdit, setCurrentEdit] = useState({});
-
+    const [movies , setMovies] = useState([]);
     useEffect(() => {
+            setMovies([...movies , props.movies]);
         if (params.id) {
+            console.log(props.movies)
             setCurrentEdit(props.movies.filter(movie => movie.id == params.id));
         } else {
+            // Pour chaque nom d'input on définit la valeur par défaut de l'input
+            setValue('title', props.data.title);
+            setValue("overview", props.data.overview);
+            setValue("date", props.data.release_date);
+            setValue("note", props.data.vote_average);
+            setValue("poster", imgUrl + props.data.poster_path);
+            setValue("backdrop", imgUrl + props.data.backdrop_path);
+
             props.data.actors.forEach((item, index) => {
                 setValue(`actor_${index}_name`, item.name);
                 setValue(`actor_${index}_photo`, imgUrl + item.profile_path);
@@ -29,12 +42,6 @@ function SearchResult(props) {
                 setValue(`similar_${index}_poster`, imgUrl + item.poster_path);
                 setValue(`similar_${index}_release_date`, item.release_date)
             });
-            setValue('title', props.data.title);
-            setValue("overview", props.data.overview);
-            setValue("date", props.data.release_date);
-            setValue("note", props.data.vote_average);
-            setValue("poster", imgUrl + props.data.poster_path);
-            setValue("backdrop", imgUrl + props.data.backdrop_path);
         }
     }, []);
 
@@ -166,6 +173,8 @@ function SearchResult(props) {
 
     const onSubmit = (data) => {
         if (!params.id) {
+            console.log(movies)
+
             const categories = [];
             props.data.genres.forEach(item => {
                 categories.push(item.name)
@@ -202,6 +211,9 @@ function SearchResult(props) {
 
             axios.post("http://localhost:3000/movies", movieObj).then(res => {
                 console.log('movie res', res);
+                console.log(movies);
+                props.add(movieObj)
+
             }).catch(err => console.error(err));
 
         } else {
@@ -221,9 +233,11 @@ function SearchResult(props) {
             };
             console.log('MY DATA', movieObj);
             axios.put("http://localhost:3000/movies/" + params.id , movieObj).then(res => {
-                console.log('res' , res)
+                console.log('res' , res);
+                props.update(movieObj , params.id);
             }).catch(err => console.error(err));
         }
+        console.log(movies);
         setRedirectTo('/movies')
     };
     return (

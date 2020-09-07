@@ -11,6 +11,10 @@ function Actors(props) {
         }
     });
 
+    //Utilisation de useFieldArray https://react-hook-form.com/advanced-usage#FieldArrays
+    // Permet de controller la création d'inputs via fields qui à comme valeur par défaut le tableau d'ojbect actors.
+    // Grace aux méthodes append et remove on peut ajouter ou supprimer un object dans le tableau fields
+
     const {fields, append, remove} = useFieldArray({
         control,
         name: "actors"
@@ -22,7 +26,7 @@ function Actors(props) {
                 return (
                     <div className="col-12 row justify-content-center justify-content-lg-between flex-wrap align-items-center" key={index}>
                         <div className="col-xl-2 col-6 justify-content-center row">
-                            <button className="btn btn-danger buttonStyle col-6"
+                            <button type="button" className="btn btn-danger buttonStyle col-6"
                                     onClick={() => remove(index)}>
                                 <FontAwesomeIcon icon={faTrash}/>
                             </button>

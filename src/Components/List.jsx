@@ -6,7 +6,6 @@ import SearchResult from "./SearchResult";
 
 function List(props) {
     const apiKey = "7de0ea6cc8752d95f4cb988e9e3e333b";
-    const [redirectTo, setRedirectTo] = useState('');
     const [card, setCard] = useState([]);
     const [currentSearch, setCurrentSearch] = useState({});
 
@@ -36,6 +35,9 @@ function List(props) {
             });
         });
     }, []);
+    const addMovie = (movie) => {
+        props.add(movie);
+    };
 
     return (
         <div>
@@ -56,7 +58,7 @@ function List(props) {
                     </Dropdown.Menu>
                 </Dropdown>
             }
-            {Object.keys(currentSearch).length > 0 ? <SearchResult data={currentSearch}/> : ''}
+            {Object.keys(currentSearch).length > 0 ? <SearchResult data={currentSearch} movies={props.movies} add={addMovie}/> : ''}
         </div>
     );
 }

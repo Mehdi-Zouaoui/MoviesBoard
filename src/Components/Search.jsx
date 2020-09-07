@@ -4,7 +4,7 @@ import axios from 'axios';
 import List from "./List";
 import '../styles.css';
 
-function Search() {
+function Search(props) {
 
     const apiKey = "7de0ea6cc8752d95f4cb988e9e3e333b";
     const [films, setFilms] = useState([]);
@@ -27,6 +27,10 @@ function Search() {
         //     });
         // }
     };
+    const addMovie = (movie) => {
+        props.add(movie);
+    };
+
     const capitalizeFirstLetter = (string)  => {
         return string.charAt(0).toUpperCase() + string.slice(1);
     };
@@ -67,7 +71,7 @@ function Search() {
                 </div>
                 <input className="btn mt-3 m-auto btn-dark col-6 " type="submit" value="Envoyer"/>
             </form>
-            {films.length ? <List array={films}/> : ""}
+            {films.length ? <List array={films}  add={addMovie} /> : ""}
         </div>
     )
 }

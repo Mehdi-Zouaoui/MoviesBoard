@@ -1,252 +1,186 @@
 {
   "movies": [
     {
-      "title": "Pokémon Detective Pikachu ",
-      "release_date": "2019-05-03",
+      "title": "xXx",
+      "release_date": "2002-08-09",
       "categories": [
         "Action",
         "Adventure",
-        "Fantasy"
+        "Thriller"
       ],
-      "score": "7",
-      "description": "In a world where people collect pocket-size monsters (Pokémon) to do battle, a boy comes across an intelligent monster who seeks to be a detective.",
-      "poster": "http://image.tmdb.org/t/p/original/wgQ7APnFpf1TuviKHXeEe3KnsTV.jpg",
-      "backdrop": "http://image.tmdb.org/t/p/original/nDP33LmQwNsnPv29GQazz59HjJI.jpg",
+      "score": "5.9",
+      "description": "Xander Cage is your standard adrenaline junkie with no fear and a lousy attitude. When the US Government \"recruits\" him to go on a mission, he's not exactly thrilled. His mission: to gather information on an organization that may just be planning the destruction of the world, led by the nihilistic Yorgi.",
+      "poster": "http://image.tmdb.org/t/p/original/kRQO8h4hJANO5pm0MmpFQR432h0.jpg",
+      "backdrop": "http://image.tmdb.org/t/p/original/qwK9soQmmJ7kRdjLZVXblw3g7AQ.jpg",
       "actors": [
         {
-          "name": "Ryan Reynolds",
-          "photo": "http://image.tmdb.org/t/p/original/h1co81QaT2nJA41Sb7eZwmWl1L2.jpg",
-          "character": "Detective Pikachu (voice)"
+          "name": "Vin Diesel",
+          "photo": "http://image.tmdb.org/t/p/original/7rwSXluNWZAluYMOEWBxkPmckES.jpg",
+          "character": "Xander Cage"
         },
         {
-          "name": "Justice Smith",
-          "photo": "http://image.tmdb.org/t/p/original/3UoUT44XYWoWNsZaqHzN3w48gZL.jpg",
-          "character": "Tim Goodman"
+          "name": "Asia Argento",
+          "photo": "http://image.tmdb.org/t/p/original/krvxUFSgLeYpdDXmFAANNv5fzKI.jpg",
+          "character": "Yelena"
         },
         {
-          "name": "Kathryn Newton",
-          "photo": "http://image.tmdb.org/t/p/original/josGaRCnTXIKQWSU09RxqKE5S8F.jpg",
-          "character": "Lucy Stevens"
+          "name": "Samuel L. Jackson",
+          "photo": "http://image.tmdb.org/t/p/original/mXN4Gw9tZJVKrLJHde2IcUHmV3P.jpg",
+          "character": "Agent Augustus Gibbons"
         },
         {
-          "name": "Bill Nighy",
-          "photo": "http://image.tmdb.org/t/p/original/acbigDOU1L1vMWAL3Wf0r8h8qLA.jpg",
-          "character": "Howard Clifford / Mewtwo (voice)"
-        }
-      ],
-      "similar_movies": [],
-      "id": 10
-    },
-    {
-      "title": "Gone Girl",
-      "release_date": "2014-10-01",
-      "categories": [
-        "Mystery",
-        "Thriller",
-        "Drama"
-      ],
-      "score": "7.9",
-      "description": "With his wife's disappearance having become the focus of an intense media circus, a man sees the spotlight turned on him when it's suspected that he may not be innocent.",
-      "poster": "http://image.tmdb.org/t/p/original/qymaJhucquUwjpb8oiqynMeXnID.jpg",
-      "backdrop": "http://image.tmdb.org/t/p/original/x9ezMgOtDPqHatHDvxEG0ILb6Ie.jpg",
-      "actors": [
-        {
-          "name": "Ben Affleck",
-          "photo": "http://image.tmdb.org/t/p/original/8WE5VNhTkiyus0xqUWdL9wNyl0P.jpg",
-          "character": "Nick Dunne"
+          "name": "Danny Trejo",
+          "photo": "http://image.tmdb.org/t/p/original/gCWJybpDGAuKZ0mG2uTBVfsLuZX.jpg",
+          "character": "El Jefe"
         },
         {
-          "name": "Rosamund Pike",
-          "photo": "http://image.tmdb.org/t/p/original/8ObNklHDi2hjdz0ayzJFB9jtqzm.jpg",
-          "character": "Amy Elliott Dunne"
+          "name": "Leila Arcieri",
+          "photo": "http://image.tmdb.org/t/p/original/cTZP18UgEwU0anDFCYDiWPxxIjI.jpg",
+          "character": "Jordan King"
         },
         {
-          "name": "Kim Dickens",
-          "photo": "http://image.tmdb.org/t/p/original/eaJky5Q6X51u0bnQkXyOrM8RnlG.jpg",
-          "character": "Detective Rhonda Boney"
-        },
-        {
-          "name": "Tyler Perry",
-          "photo": "http://image.tmdb.org/t/p/original/5bbMzlH63dLVYoMYWm61sv1Y3fW.jpg",
-          "character": "Tanner Bolt"
-        },
-        {
-          "name": "Neil Patrick Harris",
-          "photo": "http://image.tmdb.org/t/p/original/oyy0Enz4ZX8KYRYihgSgOA18Xc.jpg",
-          "character": "Desi Collins"
-        },
-        {
-          "name": "Carrie Coon",
-          "photo": "http://image.tmdb.org/t/p/original/19BIUqUTq4dXCCes7L1UP4ypqfQ.jpg",
-          "character": "Margo Dunne"
-        },
-        {
-          "name": "Souad Belhaj",
-          "photo": "http://image.tmdb.org/t/p/original/19BIUqUTq4dXCCes7L1UP4ypqfQ.jpg",
-          "character": "Sou La Menace"
+          "name": "Marton Csokas",
+          "photo": "http://image.tmdb.org/t/p/original/bUO8mwJQ00ZD9wNZsNCevCZQR5L.jpg",
+          "character": "Yorgi"
         }
       ],
       "similar_movies": [
         {
-          "title": "Jack Reacher",
-          "poster": "http://image.tmdb.org/t/p/original/zlyhKMi2aLk25nOHnNm43MpZMtQ.jpg",
-          "release_date": "2012-12-20"
+          "title": "Anna",
+          "poster": "http://image.tmdb.org/t/p/original/r982oStnpOAwosGKHXBOd7LVReh.jpg",
+          "release_date": "2019-06-19"
         },
         {
-          "title": "Lost Girls",
-          "poster": "http://image.tmdb.org/t/p/original/pDas4DwURlRzjD9xEhSdtkcl1ZV.jpg",
-          "release_date": "2020-03-13"
+          "title": "Black Widow",
+          "poster": "http://image.tmdb.org/t/p/original/uAUCHOYwFKQvSRZByP8rCgWKwT.jpg",
+          "release_date": "2020-10-28"
         },
         {
-          "title": "22 Bullets",
-          "poster": "http://image.tmdb.org/t/p/original/oMnsNcEXLabig6M0Yxn2gfcfyVA.jpg",
-          "release_date": "2010-03-23"
+          "title": "Mission: Impossible",
+          "poster": "http://image.tmdb.org/t/p/original/lirMXnE7NoVLDr3qeqf48fR1mk4.jpg",
+          "release_date": "1996-05-22"
         },
         {
-          "title": "The Girl with the Dragon Tattoo",
-          "poster": "http://image.tmdb.org/t/p/original/vbLedKc1BUF4FOH1GyHW62FulCc.jpg",
-          "release_date": "2011-12-14"
+          "title": "The Hunt for Red October",
+          "poster": "http://image.tmdb.org/t/p/original/yVl7zidse4KiWtGMqHFtZCx4X3N.jpg",
+          "release_date": "1990-03-02"
+        }
+      ],
+      "id": 10
+    },
+    {
+      "title": "Death Note nul 000",
+      "release_date": "2017-08-25",
+      "categories": [
+        "Fantasy",
+        "Horror",
+        "Thriller"
+      ],
+      "score": "4.2",
+      "description": "A young man comes to possess a supernatural notebook, the Death Note, that grants him the power to kill any person simply by writing down their name on the pages. He then decides to use the notebook to kill criminals and change the world, but an enigmatic detective attempts to track him down and end his reign of terror.",
+      "poster": "http://image.tmdb.org/t/p/original/1X19j2albvewAdnTNHx2fFXjOcC.jpg",
+      "backdrop": "http://image.tmdb.org/t/p/original/nDAbr3NSkkOMIkFrQ3ycVxzgaMc.jpg",
+      "actors": [
+        {
+          "name": "Nat Wolff",
+          "photo": "http://image.tmdb.org/t/p/original/oqDJSGjomTiOkgfFGHTQsIPFPyt.jpg",
+          "character": "Light Turner / \"Kira\""
+        },
+        {
+          "name": "Lakeith Stanfield",
+          "photo": "http://image.tmdb.org/t/p/original/5AykKpsH8DMxIm144ET7fVVTQfw.jpg",
+          "character": "L"
+        },
+        {
+          "name": "Willem Dafoe",
+          "photo": "http://image.tmdb.org/t/p/original/ui8e4sgZAwMPi3hzEO53jyBJF9B.jpg",
+          "character": "Ryuk (voice)"
+        },
+        {
+          "name": "Margaret Qualley",
+          "photo": "http://image.tmdb.org/t/p/original/goZk1nNQIHzU2cYi1sqgLwFu8Tq.jpg",
+          "character": "Mia Sutton / \"Kira\""
+        },
+        {
+          "name": "Shea Whigham",
+          "photo": "http://image.tmdb.org/t/p/original/d3caK3l4UfbnzOxv95wLoFLZzMO.jpg",
+          "character": "James Turner"
+        },
+        {
+          "name": "Paul Nakauchi",
+          "photo": "http://image.tmdb.org/t/p/originalnull",
+          "character": "Watari"
+        }
+      ],
+      "similar_movies": [
+        {
+          "title": "Dragon Ball: Curse of the Blood Rubies",
+          "poster": "http://image.tmdb.org/t/p/original/dZCWRFJnwyxYOhzAhf7Xyru4moB.jpg",
+          "release_date": "1986-12-20"
+        },
+        {
+          "title": "Dragon Ball Z: Bardock - The Father of Goku",
+          "poster": "http://image.tmdb.org/t/p/original/yCjp8HJ4XANcB0FxoOztq9cF1pS.jpg",
+          "release_date": "1990-10-17"
+        },
+        {
+          "title": "Dragon Ball Z: Fusion Reborn",
+          "poster": "http://image.tmdb.org/t/p/original/7AHvaEAeQfkfJ4OqcBePxa2ao09.jpg",
+          "release_date": "1995-03-04"
+        },
+        {
+          "title": "Dragon Ball Z: The History of Trunks",
+          "poster": "http://image.tmdb.org/t/p/original/AfUkiiR0UKeiPXPgTx9bRO4snTB.jpg",
+          "release_date": "1993-02-24"
         }
       ],
       "id": 11
     },
     {
-      "title": "Ip Man 3",
-      "release_date": "2015-12-19",
+      "title": "Planet Ocean",
+      "release_date": "2012-06-18",
       "categories": [
-        "Action",
-        "Drama",
-        "History"
+        "Documentary"
       ],
-      "score": "6.9",
-      "description": "When a band of brutal gangsters led by a crooked property developer make a play to take over the city, Master Ip is forced to take a stand.",
-      "poster": "http://image.tmdb.org/t/p/original/7iMEXaYKJRfAYU2CjEQSWCeshI5.jpg",
-      "backdrop": "http://image.tmdb.org/t/p/original/oDgoPUqA9esbRzcs8Zg16UzXzko.jpg",
+      "score": "7.4",
+      "description": "Dive into our planet's greatest mysteries with a team of international underwater cinematographers as they explore the breathtaking bond between humanity and the ocean.",
+      "poster": "http://image.tmdb.org/t/p/original/kukf6NNxQF1wLykdC2e0jlVELig.jpg",
+      "backdrop": "http://image.tmdb.org/t/p/original/qks7AuoxeITkFivDawWvEt8xbe5.jpg",
       "actors": [
         {
-          "name": "Donnie Yen",
-          "photo": "http://image.tmdb.org/t/p/original/p3sugAyhw7yHPFPr3G3oRPcb2in.jpg",
-          "character": "Ip Man"
+          "name": "Josh Duhamel",
+          "photo": "http://image.tmdb.org/t/p/original/pImYEPzq2L9ndd4rsZLmiCjqbW5.jpg",
+          "character": "Narrator"
         },
         {
-          "name": "Lynn Hung",
-          "photo": "http://image.tmdb.org/t/p/original/jSLg8PqxdwDWfCChU2RG0B6HmCX.jpg",
-          "character": "Cheung Wing-Sing"
-        },
-        {
-          "name": "Zhang Jin",
-          "photo": "http://image.tmdb.org/t/p/original/slKik1SRcBZUlUQWTmNGbQMCCOp.jpg",
-          "character": "Cheung Tin-chi"
-        },
-        {
-          "name": "Patrick Tam",
-          "photo": "http://image.tmdb.org/t/p/original/aOus8OyhjMqJxnZsI0r5krej8TU.jpg",
-          "character": "Ma King-Sang"
-        },
-        {
-          "name": "Karena Ng",
-          "photo": "http://image.tmdb.org/t/p/original/6u97Dg9BNNQxd8ih7FrwW1pyobv.jpg",
-          "character": "Sra. Wong"
-        },
-        {
-          "name": "Kent Cheng",
-          "photo": "http://image.tmdb.org/t/p/original/rQRr8QvdkUsQVhchdUtiTznVVff.jpg",
-          "character": "Detectiu Po"
+          "name": "Luca Mercalli",
+          "photo": "http://image.tmdb.org/t/p/originalnull",
+          "character": "Narrator"
         }
       ],
       "similar_movies": [
         {
-          "title": "Mary Shelley",
-          "poster": "http://image.tmdb.org/t/p/original/gKHJTsrfxJtfFNPQJn2hDNEMtFf.jpg",
-          "release_date": "2017-08-06"
+          "title": "The Abyss",
+          "poster": "http://image.tmdb.org/t/p/original/jel2BuDv7Bq4fuv2pUrTfiBm69o.jpg",
+          "release_date": "1989-08-09"
         },
         {
-          "title": "Lust for Life",
-          "poster": "http://image.tmdb.org/t/p/original/pEq5fnsZU9ZW6oJuDAyMdRF7NHC.jpg",
-          "release_date": "1956-09-15"
+          "title": "In the Heart of the Sea",
+          "poster": "http://image.tmdb.org/t/p/original/h0vTvJUlwylwNZgNtF5o0KBiTsV.jpg",
+          "release_date": "2015-11-20"
         },
         {
-          "title": "Wild",
-          "poster": "http://image.tmdb.org/t/p/original/wdqFCEAwQNi2Ze5pIBGVsgKLLmy.jpg",
-          "release_date": "2014-01-16"
+          "title": "The SpongeBob Movie: Sponge Out of Water",
+          "poster": "http://image.tmdb.org/t/p/original/2WDmjUlSAPlA27i2OwEC7sRTFw3.jpg",
+          "release_date": "2015-01-28"
         },
         {
-          "title": "Sully",
-          "poster": "http://image.tmdb.org/t/p/original/5L29r3uwDe49XDMaK2xDkDht9t0.jpg",
-          "release_date": "2016-09-07"
+          "title": "The SpongeBob SquarePants Movie",
+          "poster": "http://image.tmdb.org/t/p/original/6sgo6TCakeL4KFwwcJyvkZ7zhMX.jpg",
+          "release_date": "2004-11-14"
         }
       ],
-      "id": 12
-    },
-    {
-      "title": "Space Jam",
-      "release_date": "1996-11-15",
-      "categories": [
-        "Animation",
-        "Family",
-        "Comedy",
-        "Science Fiction",
-        "Adventure"
-      ],
-      "score": "6.8",
-      "description": "Swackhammer, an evil alien theme park owner, needs a new attraction at Moron Mountain. When his gang, the Nerdlucks, heads to Earth to kidnap Bugs Bunny and the Looney Tunes, Bugs challenges them to a basketball game to determine their fate. The aliens agree, but they steal the powers of NBA basketball players, including Larry Bird and Charles Barkley -- so Bugs gets some help from superstar Michael Jordan.",
-      "poster": "http://image.tmdb.org/t/p/original/w0y7mNCiiHdyo05KlguqQS28Frn.jpg",
-      "backdrop": "http://image.tmdb.org/t/p/original/54lisrR60aaS9w7VjIrzX2rxCct.jpg",
-      "actors": [
-        {
-          "name": "Michael Jordan",
-          "photo": "http://image.tmdb.org/t/p/original/tCqjwlROe98wYbcRhCcp3qYsUc5.jpg",
-          "character": "Self"
-        },
-        {
-          "name": "Wayne Knight",
-          "photo": "http://image.tmdb.org/t/p/original/xlGqbZjn48xAUa7eqTybZP360w0.jpg",
-          "character": "Stan Podolak"
-        },
-        {
-          "name": "Theresa Randle",
-          "photo": "http://image.tmdb.org/t/p/original/myBU9qG6wXHJfYF9cl07rvQmhUB.jpg",
-          "character": "Juanita Jordan"
-        },
-        {
-          "name": "Manner Washington",
-          "photo": "http://image.tmdb.org/t/p/originalnull",
-          "character": "Jeffery Jordan"
-        },
-        {
-          "name": "Eric Gordon",
-          "photo": "http://image.tmdb.org/t/p/originalnull",
-          "character": "Marcus Jordan"
-        },
-        {
-          "name": "Penny Bae Bridges",
-          "photo": "http://image.tmdb.org/t/p/original/ebIfTtoNxMigFCMpNXC4QHjNB5I.jpg",
-          "character": "Jasmine Jordan"
-        }
-      ],
-      "similar_movies": [
-        {
-          "title": "Like Mike",
-          "poster": "http://image.tmdb.org/t/p/original/xXON2phPAvkLrRZfDate14ATk6J.jpg",
-          "release_date": "2002-07-03"
-        },
-        {
-          "title": "Who Framed Roger Rabbit",
-          "poster": "http://image.tmdb.org/t/p/original/lYfRc57Kx9VgLZ48iulu0HKnM15.jpg",
-          "release_date": "1988-06-21"
-        },
-        {
-          "title": "Pixie Hollow Games",
-          "poster": "http://image.tmdb.org/t/p/original/ks1vDUSOW7BO2UsRi4PD6Ova0zT.jpg",
-          "release_date": "2011-12-24"
-        },
-        {
-          "title": "The Adventures of Rocky & Bullwinkle",
-          "poster": "http://image.tmdb.org/t/p/original/9VIU9RZ5yIVYQzXOFKX6nrHK0pl.jpg",
-          "release_date": "2000-06-30"
-        }
-      ],
-      "id": 13
+      "id": 15
     }
   ]
 }

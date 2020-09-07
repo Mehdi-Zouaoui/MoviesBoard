@@ -14,26 +14,25 @@ function Movies(props) {
     const [currentMovie, setCurrentMovie] = useState({});
 
     useEffect(() => {
-        setMovies(props.movies);
+        setMovies([...props.movies]);
         setCurrentMovie(props.currentMovie);
+
     }, []);
 
     const handleSelect = (selectedIndex) => {
         setIndex(selectedIndex);
         setCurrentMovie(movies[selectedIndex]);
-        setIndex(selectedIndex)
+        setIndex(selectedIndex);
+
     };
-    const deleteMovie = () => {
-        axios.delete(`http://localhost:3000/movies/` + currentMovie.id)
-            .then((item) => {
-            console.log(item);
-        })
-            .catch(err => console.error(err));
+    const deleteMovie = (id) => {
+      props.delete(id)
     };
 
     return (
         <div className="container-fluid overflow-hidden homepage"
              style={{backgroundImage: `url(${currentMovie.backdrop})`}}>
+
             <div className="filter"/>
             <main className="display flex-column flex-xl-row">
                 <div className=" movie col-6 h-75 d-flex flex-column align-items-center justify-content-center text-white">
@@ -72,7 +71,7 @@ function Movies(props) {
                               className="btn w-100 col-xl-2  mr-1  btn-ico btn-outline-warning">Update <FontAwesomeIcon icon={faEdit}/>
                         </Link>
                         <DeleteModal delete={deleteMovie}
-                                     index={index}/>
+                                     id={currentMovie.id}/>
                     </div>
                 </div>
             </main>
