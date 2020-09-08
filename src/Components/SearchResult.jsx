@@ -350,7 +350,7 @@ function SearchResult(props) {
                 <div className="form-row">
                     <div className="search_input"> Genre</div>
                     <div className="col-10">
-                        <div className="row  flex-xl-row flex-column ml-5">
+                        <div className="row  flex-xl-row align-items-center justify-content-center flex-column ml-5">
                             {currentEdit[0] && params.id ? currentEdit[0].categories.map((item, index) => {
                                 return (
                                     <h2 className="col-4"
@@ -371,7 +371,7 @@ function SearchResult(props) {
                 </div>
                 <div className="form-row mb-4">
                     <div className="search_input m-auto"/>
-                    <div className="col-xl-10 col-12">
+                    <div className="col-xl-10 text-center col-12">
                         <button type="submit"
                                 className="btn col-4 mb-2 btn-dark text-white">Valider</button>
                     </div>

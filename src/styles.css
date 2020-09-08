@@ -290,7 +290,7 @@
     }
 
     .movie_details .movie_note {
-        width: 400px;
+        width: auto;
     }
 
     .movie_details .score {
