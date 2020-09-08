@@ -8,24 +8,22 @@ function Actors(props) {
     const {control} = useForm({
         defaultValues: {
             actors: props.actors
-        }
-    });
+        }});
 
-    //Utilisation de useFieldArray https://react-hook-form.com/advanced-usage#FieldArrays
+    // Utilisation de useFieldArray https://react-hook-form.com/advanced-usage#FieldArrays
     // Permet de controller la création d'inputs via fields qui à comme valeur par défaut le tableau d'ojbect actors.
     // Grace aux méthodes append et remove on peut ajouter ou supprimer un object dans le tableau fields
-
     const {fields, append, remove} = useFieldArray({
         control,
         name: "actors"
     });
 
     return (
-        <div className="row justify-content-center justify-content-xl-end">
+        <div className="row justify-content-center col-12 justify-content-xl-end">
             {fields.map((item, index) => {
                 return (
-                    <div className="col-12 row justify-content-center justify-content-lg-between flex-wrap align-items-center" key={index}>
-
+                    <div className="col-12 row justify-content-center justify-content-lg-between flex-wrap align-items-center"
+                         key={index}>
                         <div className="form-group col-12 col-xl-4 row justify-content-center">
                             <label className="label--desc col-8 text-center">name</label>
                             <input type="text"
@@ -51,7 +49,8 @@ function Actors(props) {
                                    ref={props.register} name={`actor_${index}_character`}/>
                         </div>
                         <div className="col-xl-2 col-6 justify-content-center row">
-                            <button type="button" className="btn btn-danger buttonStyle col-6"
+                            <button type="button"
+                                    className="btn btn-danger buttonStyle col-6"
                                     onClick={() => remove(index)}>
                                 <FontAwesomeIcon icon={faTrash}/>
                             </button>
@@ -59,9 +58,10 @@ function Actors(props) {
                     </div>
                 );
             })}
-            <button type="button" className="btn btn-dark col-6 m-auto"
+            <button type="button"
+                    className="btn btn-dark col-6 m-auto"
                     onClick={() => {append({ name: "",photo: "" , character: "" });}}>
-                <FontAwesomeIcon icon={faPlus}/>  Add Actors</button>
+                <FontAwesomeIcon icon={faPlus}/> Add Actors</button>
         </div>
     )
 }

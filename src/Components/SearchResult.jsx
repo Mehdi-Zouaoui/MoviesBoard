@@ -10,7 +10,7 @@ import SimilarMovies from "./SimilarMovies";
 function SearchResult(props) {
 
     // Utilisation de useForm https://react-hook-form.com/api#useForm
-    // Facilite la gestion de formulaire grace à l'attribut register qui a le même comportement que  value et onChange des inputs classiques
+    // Facilite la gestion de formulaire grace à l'attribut register qui a le même comportement que l'attribut value et l'evenement onChange des inputs classiques
     // Register est dépendant de l'attribut name de l'input
     const {register, handleSubmit, setValue} = useForm();
     const [redirectTo, setRedirectTo] = useState("");
@@ -18,12 +18,14 @@ function SearchResult(props) {
     const params = useParams();
     const [currentEdit, setCurrentEdit] = useState({});
     const [movies , setMovies] = useState([]);
+
     useEffect(() => {
             setMovies([...movies , props.movies]);
+            // Si l'utilisateur cherche à modifier le film
         if (params.id) {
-            console.log(props.movies)
+            console.log(props.movies);
             setCurrentEdit(props.movies.filter(movie => movie.id == params.id));
-        } else {
+        }else {
             // Pour chaque nom d'input on définit la valeur par défaut de l'input
             setValue('title', props.data.title);
             setValue("overview", props.data.overview);
@@ -45,6 +47,7 @@ function SearchResult(props) {
         }
     }, []);
 
+    // Retourne un groupe d'inputs qui à pour valeur par défaut les valeurs de l'objet du tableau
     const actorsFields = (array) => {
         return (
             <div className="row justify-content-center">
@@ -84,8 +87,8 @@ function SearchResult(props) {
         )
     };
 
+    // Retourne un groupe d'inputs qui à pour valeur par défaut les valeurs de l'objet du tableau
     const similarFields = (array) => {
-
         return (
             <div className="row justify-content-center ">
                 {array.map((item, index) => {
@@ -124,21 +127,23 @@ function SearchResult(props) {
         )
     };
 
+    // Récupère les clefs similar_movies et actors de l'object afficher
+    // et stock uniquement des singleton dans un tableau pour pouvoir l'envoyer
+    // en base de données
     const updateFields = (data, query) => {
-
         let array = [];
         let index = 0;
-        let test = {};
+        let newObject = {};
         for (const key in data) {
             if (key.includes(query)) {
                 if (key.includes(query + JSON.stringify(index))) {
-                    test[key.split(`${query + index}_`)[1]] = data[key];
-                } else {
-                    array.push(test);
-                    test = {};
+                    newObject[key.split(`${query + index}_`)[1]] = data[key];
+                    array.push(newObject);
+                }else {
+                    newObject = {};
                     index++;
-                    test[key.split(`${query + index}_`)[1]] = data[key];
-                    array.push(test);
+                    newObject[key.split(`${query + index}_`)[1]] = data[key];
+                    array.push(newObject);
                 }
             }
         }
@@ -146,8 +151,8 @@ function SearchResult(props) {
         return array;
     };
 
+    // Mise à jour des valeurs par défaut de chaque inputs du formulaire
     const edit = (movie) => {
-
         if (movie !== undefined) {
             setValue('title', movie.title);
             setValue("overview", movie.description);
@@ -171,15 +176,14 @@ function SearchResult(props) {
         }
     };
 
+    // Gestion de l'envois des données au serveur local
+    // ou de la modification d'un film et redirection
     const onSubmit = (data) => {
         if (!params.id) {
-            console.log(movies)
-
             const categories = [];
             props.data.genres.forEach(item => {
                 categories.push(item.name)
             });
-
             const actors = props.data.actors.map(item => {
                 return ({
                         name: item.name,
@@ -196,7 +200,6 @@ function SearchResult(props) {
                     }
                 )
             });
-
             const movieObj = {
                 title: data.title,
                 release_date: data.date,
@@ -208,18 +211,14 @@ function SearchResult(props) {
                 actors: actors,
                 similar_movies: similarMovies,
             };
-
-            axios.post("http://localhost:3000/movies", movieObj).then(res => {
-                console.log('movie res', res);
-                console.log(movies);
+            axios.post("http://localhost:3000/movies", movieObj)
+                .then(res => {
                 props.add(movieObj)
-
-            }).catch(err => console.error(err));
-
-        } else {
+            })
+                .catch(err => console.error(err));
+        }else {
             const actors = updateFields(data, 'actor_');
             const similar = updateFields(data, 'similar_');
-
             const movieObj = {
                 title: data.title,
                 release_date: data.date,
@@ -231,60 +230,69 @@ function SearchResult(props) {
                 actors: actors,
                 similar_movies: similar,
             };
-            console.log('MY DATA', movieObj);
-            axios.put("http://localhost:3000/movies/" + params.id , movieObj).then(res => {
-                console.log('res' , res);
+            axios.put("http://localhost:3000/movies/" + params.id , movieObj)
+                .then(res => {
                 props.update(movieObj , params.id);
-            }).catch(err => console.error(err));
+            })
+                .catch(err => console.error(err));
         }
-        console.log(movies);
         setRedirectTo('/movies')
     };
     return (
         <div className="mt-5">
             {redirectTo ? <Redirect to={redirectTo}/> : ''}
             {currentEdit ? edit(currentEdit[0]) : ''}
-            <form className=" formStyle col-9" onSubmit={handleSubmit(onSubmit)}>
+            <form className=" formStyle col-9"
+                  onSubmit={handleSubmit(onSubmit)}>
                 <div className="form-row mb-4">
                     <div className="search_input m-auto"> Name</div>
                     <div className="col-xl-10 col-12">
                         <div className="row row-space">
                             <div className="col-12">
-                                <input type="text" className="inputStyle col-12" id="inputEmail4" name="title"
+                                <input type="text"
+                                       required
+                                       className="inputStyle col-12"
+                                       id="inputEmail4"
+                                       name="title"
                                        ref={register}/>
                             </div>
                         </div>
-
                     </div>
                 </div>
-
                 <div className="form-row mb-4">
                     <div className="search_input m-auto"> Details</div>
                     <div className="col-xl-10 col-12">
                         <div className="row justify-content-between row-space">
                             <div className="col-6">
-                                <input type="text" className="inputStyle col-12" id="inputEmail4" name="date"
+                                <input type="text"
+                                       className="inputStyle col-12"
+                                       id="inputEmail4"
+                                       name="date"
                                        ref={register}/>
                                 <label className="label--desc col-12 text-center">Date</label>
                             </div>
                             <div className="col-6">
-                                <input type="text" className="inputStyle col-12" id="inputEmail4" name="note"
+                                <input type="text"
+                                       required
+                                       className="inputStyle col-12"
+                                       id="inputEmail4"
+                                       name="note"
                                        ref={register}/>
                                 <label className="label--desc"> Note </label>
                             </div>
-
                         </div>
-
                     </div>
-
                 </div>
-
                 <div className="form-row mb-4">
                     <div className="search_input m-auto"> Poster</div>
                     <div className="col-xl-10 col-12">
                         <div className="row row-space">
                             <div className="col-12">
-                                <input type="text" className="inputStyle col-12" id="inputEmail4" name="poster"
+                                <input type="text"
+                                       required
+                                       className="inputStyle col-12"
+                                       id="inputEmail4"
+                                       name="poster"
                                        ref={register}/>
                             </div>
                         </div>
@@ -295,7 +303,10 @@ function SearchResult(props) {
                     <div className="col-xl-10 col-12">
                         <div className="row row-space">
                             <div className="col-12">
-                                <input type="text" className="inputStyle col-12" id="inputEmail4" name="backdrop"
+                                <input type="text"
+                                       className="inputStyle col-12"
+                                       id="inputEmail4"
+                                       name="backdrop"
                                        ref={register}/>
                             </div>
                         </div>
@@ -306,58 +317,66 @@ function SearchResult(props) {
                     <div className="col-xl-10 col-12">
                         <div className="row row-space">
                             <div className="col-12">
-                            <textarea className="textAreaStyle col-12 form-group" id="inputEmail4"
-                                      name="overview"
-                                      ref={register} rows={3}/>
+                                <textarea className="textAreaStyle col-12 form-group"
+                                          required
+                                          id="inputEmail4"
+                                          name="overview"
+                                          ref={register}
+                                          rows={3}/>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div className="form-row mb-4 align-items-end">
+                <div className="form-row mb-4">
                     <div className="search_input m-auto"> Similar</div>
-                    <div className="col-xl-10 col-12 d-flex justify-content-start ">
+                    <div className="col-xl-10 col-12 d-flex">
                         {currentEdit[0] && params.id ?
                             <SimilarMovies register={register({required: true})}
                                            similar={currentEdit[0].similar_movies}/> : ''}
                         {params.id ? '' : similarFields(props.data.similar)}
                     </div>
                 </div>
-
+                <hr/>
                 <div className="form-row mb-4">
                     <div className="search_input m-auto"> Actors</div>
                     <div className="col-xl-10 col-12">
                         {currentEdit[0] && params.id ?
-                            <Actors register={register({required: true})} actors={currentEdit[0].actors}/> : ''}
+                            <Actors register={register({required: true})}
+                                    actors={currentEdit[0].actors}/> : ''}
                         {params.id ? '' : actorsFields(props.data.actors)}
                     </div>
                 </div>
+                <hr/>
                 <div className="form-row">
                     <div className="search_input"> Genre</div>
                     <div className="col-10">
                         <div className="row  flex-xl-row flex-column ml-5">
                             {currentEdit[0] && params.id ? currentEdit[0].categories.map((item, index) => {
                                 return (
-                                    <h2 className="col-2" key={index}><span className="badge badge-dark ">{item}</span>
+                                    <h2 className="col-4"
+                                        key={index}>
+                                        <span className="badge badge-dark ">{item}</span>
                                     </h2>
                                 )
                             }) : ''}
                             {params.id ? '' : props.data.genres.map((item, index) => {
                                 return (
-                                    <h2 className="col-2" key={index}><span
-                                        className="badge badge-dark ">{item.name}</span></h2>
+                                    <h2 className="col-4"
+                                        key={index}>
+                                        <span className="badge badge-dark ">{item.name}</span></h2>
                                 )
                             })}
                         </div>
                     </div>
-
                 </div>
                 <div className="form-row mb-4">
                     <div className="search_input m-auto"/>
-                    <div className="col-xl-10 col-12"><button type="submit" className="btn col-4 mb-2 btn-dark text-white">Valider</button>
+                    <div className="col-xl-10 col-12">
+                        <button type="submit"
+                                className="btn col-4 mb-2 btn-dark text-white">Valider</button>
                     </div>
                 </div>
             </form>
         </div>);
 }
-
 export default SearchResult;

@@ -1,10 +1,9 @@
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-import React, {useEffect, useState} from "react";
+import React, {useState} from "react";
 import {faTrash} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {Redirect} from "react-router";
-
 
 function DeleteModal(props) {
 
@@ -25,15 +24,16 @@ function DeleteModal(props) {
         }
       props.delete(id);
       handleClose();
-
     };
 
     return (
         <>
             {redirectTo ? <Redirect to={redirectTo}/> : ''}
-            <Button  type="button" variant=" mr-1 btn btn-danger"
-                    onClick={handleShow}>{props.noWord ? '' : 'Delete'} <FontAwesomeIcon icon={faTrash}/></Button>
-            <Modal show={show} onHide={handleClose}>
+            <Button type="button"
+                    variant=" mr-1 btn btn-danger"
+                    onClick={handleShow}>{props.noWord ? '' : 'Delete '}<FontAwesomeIcon icon={faTrash}/></Button>
+            <Modal show={show}
+                   onHide={handleClose}>
                 <Modal.Header closeButton>
                     <Modal.Title>Supprimer ?</Modal.Title>
                 </Modal.Header>
