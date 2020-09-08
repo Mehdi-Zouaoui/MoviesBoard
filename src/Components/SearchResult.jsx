@@ -351,6 +351,8 @@ function SearchResult(props) {
                     <div className="search_input"> Genre</div>
                     <div className="col-10">
                         <div className="row  flex-xl-row align-items-center justify-content-center flex-column ml-5">
+
+
                             {currentEdit[0] && params.id ? currentEdit[0].categories.map((item, index) => {
                                 return (
                                     <h2 className="col-4"
