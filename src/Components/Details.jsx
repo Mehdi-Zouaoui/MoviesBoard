@@ -28,7 +28,7 @@ function Details(props) {
                         <div className='detail_backdrop row col-12 m-auto'
                              style={{backgroundImage: `url(${details.backdrop}) , url(${defaultBackdrop})`}}/>
                     </div>
-                    <div className="details d-flex flex-xl-row flex-xl-nowrap justify-content-center flex-wrap col-9">
+                    <section className="details d-flex flex-xl-row flex-xl-nowrap justify-content-center flex-wrap col-9">
                         <div className='detail_poster col-12 col-xl-3'
                              style={{backgroundImage: `url(${details.poster}) , url(${defaultPoster})`}}/>
                         <div className="col-12 d-flex flex-column text-center text-xl-left mb-2">
@@ -53,8 +53,8 @@ function Details(props) {
                                 </Link>
                             </div>
                         </div>
-                    </div>
-                    <div className=" castInfo d-flex  flex-column flex-xl-row  col-12 m-auto">
+                    </section>
+                    <section className=" castInfo d-flex  flex-column flex-xl-row  col-12 m-auto">
                         <div className="col-xl-6 col-12 d-flex flex-column"
                              style={{height: "270px"}}>
                             <div className="details_actors d-flex justify-content-center"> Actors</div>
@@ -88,7 +88,7 @@ function Details(props) {
                                 })}
                             </div>
                         </div>
-                    </div>
+                    </section>
                 </div>
                 :
                 <div className="alert alert-danger"

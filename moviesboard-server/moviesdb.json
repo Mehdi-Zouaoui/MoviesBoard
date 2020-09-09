@@ -1,93 +1,179 @@
 {
   "movies": [
     {
-      "title": "Django Unchained",
-      "release_date": "2012-12-25",
+      "title": "Gone Girl",
+      "release_date": "2014-10-01",
       "categories": [
-        "Drama",
-        "Western"
+        "Mystery",
+        "Thriller",
+        "Drama"
       ],
-      "score": "8.1",
-      "description": "With the help of a German bounty hunter, a freed slave sets out to rescue his wife from a brutal Mississippi plantation owner.",
-      "poster": "http://image.tmdb.org/t/p/original/7oWY8VDWW7thTzWh3OKYRkWUlD5.jpg",
-      "backdrop": "http://image.tmdb.org/t/p/original/zTqrLIFED5HYM8tmb7gCahUt4QF.jpg",
-      "actors": [],
-      "similar_movies": [
+      "score": "7.9",
+      "description": "With his wife's disappearance having become the focus of an intense media circus, a man sees the spotlight turned on him when it's suspected that he may not be innocent.",
+      "poster": "http://image.tmdb.org/t/p/original/qymaJhucquUwjpb8oiqynMeXnID.jpg",
+      "backdrop": "http://image.tmdb.org/t/p/original/x9ezMgOtDPqHatHDvxEG0ILb6Ie.jpg",
+      "actors": [
         {
-          "title": "3 Ninjas Kick Back",
-          "poster": "http://image.tmdb.org/t/p/original/bRipsjOdcvAVxN080S3hvSd1RJr.jpg",
-          "release_date": "1994-05-06"
+          "name": "Ben Affleck",
+          "photo": "http://image.tmdb.org/t/p/original/8WE5VNhTkiyus0xqUWdL9wNyl0P.jpg",
+          "character": "Nick Dunne"
+        },
+        {
+          "name": "Rosamund Pike",
+          "photo": "http://image.tmdb.org/t/p/original/8ObNklHDi2hjdz0ayzJFB9jtqzm.jpg",
+          "character": "Amy Elliott Dunne"
+        },
+        {
+          "name": "Kim Dickens",
+          "photo": "http://image.tmdb.org/t/p/original/eaJky5Q6X51u0bnQkXyOrM8RnlG.jpg",
+          "character": "Detective Rhonda Boney"
+        },
+        {
+          "name": "Tyler Perry",
+          "photo": "http://image.tmdb.org/t/p/original/5bbMzlH63dLVYoMYWm61sv1Y3fW.jpg",
+          "character": "Tanner Bolt"
+        },
+        {
+          "name": "Neil Patrick Harris",
+          "photo": "http://image.tmdb.org/t/p/original/oyy0Enz4ZX8KYRYihgSgOA18Xc.jpg",
+          "character": "Desi Collins"
+        },
+        {
+          "name": "Carrie Coon",
+          "photo": "http://image.tmdb.org/t/p/original/19BIUqUTq4dXCCes7L1UP4ypqfQ.jpg",
+          "character": "Margo Dunne"
         }
       ],
-      "id": 27
+      "similar_movies": [
+        {
+          "title": "Jack Reacher",
+          "poster": "http://image.tmdb.org/t/p/original/zlyhKMi2aLk25nOHnNm43MpZMtQ.jpg",
+          "release_date": "2012-12-20"
+        },
+        {
+          "title": "Lost Girls",
+          "poster": "http://image.tmdb.org/t/p/original/pDas4DwURlRzjD9xEhSdtkcl1ZV.jpg",
+          "release_date": "2020-03-13"
+        },
+        {
+          "title": "The Girl with the Dragon Tattoo",
+          "poster": "http://image.tmdb.org/t/p/original/vbLedKc1BUF4FOH1GyHW62FulCc.jpg",
+          "release_date": "2011-12-14"
+        },
+        {
+          "title": "22 Bullets",
+          "poster": "http://image.tmdb.org/t/p/original/oMnsNcEXLabig6M0Yxn2gfcfyVA.jpg",
+          "release_date": "2010-03-23"
+        }
+      ],
+      "id": 2
     },
     {
-      "title": "Mad Max: Fury Road 1",
-      "release_date": "2015-05-13",
+      "title": "Inception",
+      "release_date": "2010-07-15",
       "categories": [
         "Action",
-        "Adventure",
-        "Science Fiction"
+        "Science Fiction",
+        "Adventure"
       ],
-      "score": "7.5",
-      "description": "An apocalyptic story set in the furthest reaches of our planet, in a stark desert landscape where humanity is broken, and most everyone is crazed fighting for the necessities of life. Within this world exist two rebels on the run who just might be able to restore order.",
-      "poster": "http://image.tmdb.org/t/p/original/8tZYtuWezp8JbcsvHYO0O46tFbo.jpg",
-      "backdrop": "http://image.tmdb.org/t/p/original/nlCHUWjY9XWbuEUQauCBgnY8ymF.jpg",
+      "score": "8.3",
+      "description": "Cobb, a skilled thief who commits corporate espionage by infiltrating the subconscious of his targets is offered a chance to regain his old life as payment for a task considered to be impossible: \"inception\", the implantation of another person's idea into a target's subconscious.",
+      "poster": "http://image.tmdb.org/t/p/original/9gk7adHYeDvHkCSEqAvQNLV5Uge.jpg",
+      "backdrop": "http://image.tmdb.org/t/p/original/s3TBrRGB1iav7gFOCNx3H31MoES.jpg",
       "actors": [
+        {
+          "name": "Leonardo DiCaprio",
+          "photo": "http://image.tmdb.org/t/p/original/wo2hJpn04vbtmh0B9utCFdsQhxM.jpg",
+          "character": "Dom Cobb"
+        },
+        {
+          "name": "Joseph Gordon-Levitt",
+          "photo": "http://image.tmdb.org/t/p/original/dhv9f3AaozOjpvjAwVzOWlmmT2V.jpg",
+          "character": "Arthur"
+        },
+        {
+          "name": "Ellen Page",
+          "photo": "http://image.tmdb.org/t/p/original/9klYBqJZIMNscul78QxPwzWrur9.jpg",
+          "character": "Ariadne"
+        },
         {
           "name": "Tom Hardy",
           "photo": "http://image.tmdb.org/t/p/original/yVGF9FvDxTDPhGimTbZNfghpllA.jpg",
-          "character": "Max Rockatansky"
+          "character": "Zak Eames"
         },
         {
-          "name": "Charlize Theron",
-          "photo": "http://image.tmdb.org/t/p/original/gd7ShD0yt4bsR2STeQ19KQ6hvXL.jpg",
-          "character": "Imperator Furiosa"
+          "name": "Ken Watanabe",
+          "photo": "http://image.tmdb.org/t/p/original/psAXOYp9SBOXvg6AXzARDedNQ9P.jpg",
+          "character": "Mr. Saito"
         },
         {
-          "name": "Nicholas Hoult",
-          "photo": "http://image.tmdb.org/t/p/original/rbyi6sOw0dGV3wJzKXDopm2h0NO.jpg",
-          "character": "Nux"
-        },
-        {
-          "name": "Hugh Keays-Byrne",
-          "photo": "http://image.tmdb.org/t/p/original/rkDIHG6gZnFwOJjDwnhFV81YmqL.jpg",
-          "character": "Immortan Joe"
-        },
-        {
-          "name": "Josh Helman",
-          "photo": "http://image.tmdb.org/t/p/original/1thwLjrgvFv7ifjyVtTKQh23OCh.jpg",
-          "character": "Slit"
-        },
-        {
-          "name": "Nathan Jones",
-          "photo": "http://image.tmdb.org/t/p/original/pUZdOzNKxkX5p0GRbsTDPrH9pNv.jpg",
-          "character": "Rictus Erectus"
+          "name": "Cillian Murphy",
+          "photo": "http://image.tmdb.org/t/p/original/iskfBLuf2nWvzqEFySrhGUAhGIG.jpg",
+          "character": "Robert Fischer"
         }
       ],
       "similar_movies": [
         {
-          "title": "The Matrix Revolutions",
-          "poster": "http://image.tmdb.org/t/p/original/fgm8OZ7o4G1G1I9EeGcb85Noe6L.jpg",
-          "release_date": "2003-11-03"
+          "title": "Taken",
+          "poster": "http://image.tmdb.org/t/p/original/wrJjDB8SSJJKcpXVf4KAxZIHvBZ.jpg",
+          "release_date": "2008-02-18"
         },
         {
-          "title": "Mad Max 2",
-          "poster": "http://image.tmdb.org/t/p/original/bdEMdFHc3eVXDV6JnbY2xqbzNVj.jpg",
-          "release_date": "1981-12-24"
+          "title": "The Spy Who Dumped Me",
+          "poster": "http://image.tmdb.org/t/p/original/tpPERI5i6yjT73jYWyZ9iWltQ9L.jpg",
+          "release_date": "2018-08-02"
         },
         {
-          "title": "Interstellar",
-          "poster": "http://image.tmdb.org/t/p/original/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg",
-          "release_date": "2014-11-05"
+          "title": "From Paris with Love",
+          "poster": "http://image.tmdb.org/t/p/original/AlcoC8rv0fvVEt2f6LBu19eI2B.jpg",
+          "release_date": "2010-02-04"
         },
         {
-          "title": "In Time",
-          "poster": "http://image.tmdb.org/t/p/original/3Mwj2sIONQckOZP3YwsUXF7U5I4.jpg",
-          "release_date": "2011-10-27"
+          "title": "Executive Decision",
+          "poster": "http://image.tmdb.org/t/p/original/m3CVqpSbvqvqNcY2dBjRQ44kN2l.jpg",
+          "release_date": "1996-03-15"
         }
       ],
-      "id": 29
+      "id": 3
+    },
+    {
+      "title": "The Mask 100",
+      "release_date": "1994-07-29",
+      "categories": [
+        "Romance",
+        "Comedy",
+        "Crime",
+        "Fantasy"
+      ],
+      "score": "6.9",
+      "description": "When timid bank clerk Stanley Ipkiss discovers a magical mask containing the spirit of the Norse god Loki, his entire life changes. While wearing the mask, Ipkiss becomes a supernatural playboy exuding charm and confidence which allows him to catch the eye of local nightclub singer Tina Carlyle. Unfortunately, under the mask's influence, Ipkiss also robs a bank, which angers junior crime lord Dorian Tyrell, whose goons get blamed for the heist.",
+      "poster": "http://image.tmdb.org/t/p/original/yd3wjLLeQHJ3oRDy4wwiNNFVyLW.jpg",
+      "backdrop": "http://image.tmdb.org/t/p/original/80uHK2xWwjlOxmfJ1wQB09omAht.jpg",
+      "actors": [
+        {
+          "name": "Jim Carrey",
+          "photo": "http://image.tmdb.org/t/p/original/ienbErTKd9RHCV1j7FJLNEWUAzn.jpg",
+          "character": "Stanley Ipkiss / The Mask"
+        },
+        {
+          "name": "Cameron Diaz",
+          "photo": "http://image.tmdb.org/t/p/original/tQNnnyIUfUcP1uXRButS3xcwBmP.jpg",
+          "character": "Tina Carlyle"
+        }
+      ],
+      "similar_movies": [
+        {
+          "title": "Thor: Love and Thunder",
+          "poster": "http://image.tmdb.org/t/p/original/lrPMm9aFndk556vbRfnv0F8mrlS.jpg",
+          "release_date": "2022-02-10"
+        },
+        {
+          "title": "Test",
+          "poster": "http://image.tmdb.org/t/p/original/lrPMm9aFndk556vbRfnv0F8mrlS.jpg",
+          "release_date": "2020-09-30"
+        }
+      ],
+      "id": 4
     }
   ]
 }

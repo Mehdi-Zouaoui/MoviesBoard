@@ -70,7 +70,7 @@ function Search(props) {
                     <div className="col-xl-10 col-12 text-center">
                         <input className="btn mt-3 m-auto btn-dark col-6 "
                                type="submit"
-                               value="Envoyer"/>
+                               value="Send"/>
                     </div>
                 </div>
             </form>

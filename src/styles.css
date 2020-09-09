@@ -3,27 +3,21 @@
 
 
 
-.score {
-    height: 10%;
-    width: 50%;
-    border-radius: 50%;
-    background: #fec43d;
+
+
+
+
+.main {
+    display: flex;
 }
 
-
-
-.actorPictures {
-    border-radius: 50%;
-    width: 55px;
-    height: 55px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+.project_title {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 27px;
+    margin-bottom: 0;
 }
 
-
-
-
+/* Movie Page */
 .homepage {
     height: 100vh;
     background-position: center;
@@ -73,45 +67,10 @@
 }
 
 
-.actorInput {
-    background: #e5e5e5;
-    line-height: 30px;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-    border-color: transparent;
-    padding: 0 22px;
-    font-size: 16px;
-    color: #555;
-}
-
-
-.label--desc {
-    text-transform: capitalize;
-    display: block;
-    color: #999;
-    font-size: 14px;
-    margin: 0 0 5px 0;
-}
-
-.input-group-desc {
-    position: relative;
-}
-
-.main {
-    display: flex;
-}
-
-.project_title {
-    font-family: 'Archivo Black', sans-serif;
-    font-size: 27px;
-    margin-bottom: 0;
-}
-
-/* Movie Page */
 .movie_title {
     font-family: 'Archivo Black', sans-serif;
     font-size: 75px;
+    text-align: center;
     text-shadow: -1px 0 black, 0 10px black, 1px 0 black, 0 -1px black;
 }
 
@@ -158,7 +117,7 @@
 
 }
 .detail_poster {
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     height: 18.5rem;
     background-size: 100% 100%;
     background-repeat: no-repeat;
@@ -184,6 +143,15 @@
 .description{
     font-size: 0.8rem;
 }
+.actorPictures {
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
 .similarPictures {
     height: 7.5rem;
     background-size: 100% 100%;
@@ -235,11 +203,34 @@
     color: #555;
     border-color: transparent;
 }
-/* End of Search Page */
+.actorInput {
+    background: #e5e5e5;
+    line-height: 30px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    border-color: transparent;
+    padding: 0 22px;
+    font-size: 16px;
+    color: #555;
+}
 
+
+.label--desc {
+    text-transform: capitalize;
+    display: block;
+    color: #999;
+    font-size: 14px;
+    margin: 0 0 5px 0;
+}
+
+.input-group-desc {
+    position: relative;
+}
 .formStyle{
     margin-left: 9.375rem;
 }
+/* End of Search Page */
 
 .description_title {
     font-size: 25px;

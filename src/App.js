@@ -66,6 +66,10 @@ function App() {
     <Router>
         <Navigation/>
         <Switch>
+            <Route exact path="/">
+                <Redirect to="/movies" />
+            </Route>
+
             <Route exact path="/movies"
                    component={() => <Movies movies={movies}
                                             index={index}

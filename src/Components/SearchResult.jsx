@@ -375,7 +375,7 @@ function SearchResult(props) {
                     <div className="search_input m-auto"/>
                     <div className="col-xl-10 text-center col-12">
                         <button type="submit"
-                                className="btn col-4 mb-2 btn-dark text-white">Valider</button>
+                                className="btn col-4 mb-2 btn-dark text-white">Validate</button>
                     </div>
                 </div>
             </form>

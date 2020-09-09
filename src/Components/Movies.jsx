@@ -35,8 +35,8 @@ function Movies(props) {
                 <div className="container-fluid overflow-hidden homepage"
                      style={{backgroundImage: `url(${currentMovie.backdrop}) , url(${defaultBackdrop})`}}>
                     <div className="filter"/>
-                    <main className="display flex-column flex-xl-row">
-                        <div className=" movie col-6 h-75 d-flex flex-column align-items-center justify-content-center text-white">
+                    <section className="display flex-column flex-xl-row">
+                        <article className=" movie col-6 h-75 d-flex flex-column align-items-center justify-content-center text-white">
                             <h1 className=" mb-1 movie_title">{currentMovie.title}</h1>
                             <p className=" text-center movie_date text-warning mb-5">
                                 <FontAwesomeIcon className="text-warning"
@@ -53,9 +53,9 @@ function Movies(props) {
                                     {currentMovie.score} / 10
                                 </p>
                             </div>
-                        </div>
-                        <div className="d-flex col-6 flex-column align-items-center">
-                            <Carousel interval={10000}
+                        </article>
+                        <aside className="d-flex col-6 flex-column align-items-center">
+                            <Carousel interval={100000}
                                       indicators={false}
                                       activeIndex={index}
                                       className=' w-50 '
@@ -82,8 +82,8 @@ function Movies(props) {
                                 <DeleteModal delete={deleteMovie}
                                              id={currentMovie.id}/>
                             </div>
-                        </div>
-                    </main>
+                        </aside>
+                    </section>
                 </div>
                 :
                 <div className="alert alert-danger"
